@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107083018";
-import { isActive } from "./slides.js?v=20261107083018";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107083326";
+import { isActive } from "./slides.js?v=20261107083326";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const VERSION = new URL(import.meta.url).search;
@@ -215,7 +215,8 @@ function createBoard(root, gamesDir, title) {
 
     if (!sc) {
       const why = /\+T$/.test(game.result) ? "on time" : /\+R$/.test(game.result) ? "by resignation" : "without a count";
-      card.innerHTML = `<h3>Final position</h3><p class="score-note">${game.result ? `Result ${escapeHtml(game.result)}: the game ended ${why}` : "The game ended without a count"}, so there is no score to show.</p>`;
+      card.title = "";
+      card.innerHTML = `<p class="score-note">${game.result ? `Result ${escapeHtml(game.result)}: the game ended ${why}` : "The game ended without a count"}, so there is no score to show.</p>`;
       return;
     }
 
@@ -236,18 +237,22 @@ function createBoard(root, gamesDir, title) {
     const differs = game.result && /^[BW]\+\d/.test(game.result) && game.result !== res;
     const method = methodNote();
 
+    // Only the table is shown; the explanation is kept as a hover tooltip
+    // (title) to save vertical space.
+    const rulesNote = sc.japanese
+      ? "territory + captures + dead stones."
+      : `stones + territory; captures (${sc.captures[B]} / ${sc.captures[W]}) don't count.`;
+    card.title = [`${res}${differs ? ` (recorded ${game.result})` : ""}`,
+      `${rules} rules: ${rulesNote}`,
+      "Squares mark territory; faded stones are dead.",
+      method.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')]
+      .filter(Boolean).join("\n");
     card.innerHTML = `
-      <h3>Final score</h3>
       <table class="score">
         <thead><tr><th></th><th><span class="dot black"></span> Black</th><th><span class="dot white"></span> White</th></tr></thead>
         <tbody>${rows.map(([k, b, w]) => `<tr><th>${k}</th><td>${b}</td><td>${w}</td></tr>`).join("")}</tbody>
         <tfoot><tr><th>Total</th><td>${sc.totals[B]}</td><td>${sc.totals[W]}</td></tr></tfoot>
-      </table>
-      <p class="score-note"><strong>${res}</strong>${differs ? ` (recorded ${escapeHtml(game.result)})` : ""} · ${rules} rules: ${sc.japanese
-        ? "territory + captures + dead stones."
-        : `stones + territory. Captures (● ${sc.captures[B]}, ○ ${sc.captures[W]}) don't add to the score.`}
-        Squares mark territory; faded stones are dead.</p>
-      ${method ? `<p class="score-note">${method}</p>` : ""}`;
+      </table>`;
   }
 
   function setStatus(extra = "") {
