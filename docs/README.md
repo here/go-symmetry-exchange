@@ -28,7 +28,7 @@ The page is a slide show: one section (`.slide`) fills the screen at a time.
 
 On a board slide (each board has its own game list, controls and autoplay):
 
-- Step through a game with the buttons, the slider, or ← → Home End.
+- Step through a game with the buttons, the slider, or ← → Home End. At the last move (the scoring screen), → goes to the next game in the list; at move 0, ← goes back to the previous game, opened at its last move. Both wrap around the list.
 - Click an empty point to play the next move. If it matches the recorded move, you just step forward. Otherwise you start your own line from that point, and **Back to game** returns to the record.
 - The board enforces captures, no suicide, and simple ko.
 - **Autoplay** (button, or P on a board slide) steps through the game at the chosen speed: 2 s, 1 s (default), 0.5 s or 0.25 s per move. At the end it holds the final scoring position for 10 moves' worth of time, then moves on to the next game in that board's list, wrapping around. Manual mode is the default; stepping, clicking the board or Empty board stops autoplay. Changing the speed or picking a game keeps it running. It pauses while another slide is on screen and picks up where it left off when you come back.

@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107075728";
-import { isActive } from "./slides.js?v=20261107075728";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107075921";
+import { isActive } from "./slides.js?v=20261107075921";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const VERSION = new URL(import.meta.url).search;
@@ -248,6 +248,10 @@ function createBoard(root, gamesDir, title) {
     if (last && last.pt === null) parts.push(`${last.color === BLACK ? "Black" : "White"} passed`);
     if (divergedAt !== null) parts.push(`your line from move ${divergedAt}`);
     if (autoGen) parts.push(cur === line.length ? "autoplay: next game soon" : "autoplay");
+    else if (divergedAt === null && gameList.length) {
+      if (cur === line.length) parts.push("→ next game");
+      else if (cur === 0) parts.push("← previous game");
+    }
     $("status").textContent = `${who} to play · ${parts.join(" · ")}${extra ? " · " + extra : ""}`;
   }
 
@@ -307,6 +311,15 @@ function createBoard(root, gamesDir, title) {
     if (e.target.closest?.("select, input") || !isActive(root)) return;
     if (e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.key === "p" || e.key === "P") { e.preventDefault(); setAutoplay(!autoGen); return; }
+    // → at the last move (the scoring screen) goes to the next game;
+    // ← at move 0 goes back to the previous game, shown at its last move.
+    const onRecord = divergedAt === null && gameList.length;
+    if (e.key === "ArrowRight" && onRecord && cur === line.length) {
+      e.preventDefault(); setAutoplay(false); nextGame().catch(showError); return;
+    }
+    if (e.key === "ArrowLeft" && onRecord && cur === 0) {
+      e.preventDefault(); setAutoplay(false); prevGame().catch(showError); return;
+    }
     const keys = { ArrowLeft: cur - 1, ArrowRight: cur + 1, Home: 0, End: line.length };
     if (e.key in keys) { e.preventDefault(); setAutoplay(false); goTo(keys[e.key]); }
   });
@@ -363,6 +376,16 @@ function createBoard(root, gamesDir, title) {
     const next = gameList[(i + 1) % gameList.length];
     select.value = next.file;
     await loadFile(next.file);
+  }
+
+  async function prevGame() {
+    if (!gameList.length) return;
+    const select = $("game-select");
+    const i = gameList.findIndex((g) => g.file === select.value);
+    const prev = gameList[(i <= 0 ? gameList.length : i) - 1];
+    select.value = prev.file;
+    await loadFile(prev.file);
+    goTo(line.length);
   }
 
   // ---- game list -------------------------------------------------------
