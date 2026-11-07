@@ -127,5 +127,6 @@ The strategy: every CSS and JS link carries one shared version query, `?v=<versi
 
 ### Game data and scoring
 
-- Games live in `docs/games/9x9/ogs/` (online games, dead stones as the players marked them) and `docs/games/9x9/pro/` (professional games). Each folder has an `index.json` in menu order and a README with sources.
-- Pro records don't mark dead stones. After adding pro games, run `node tools/score-games.mjs docs/games/9x9/pro [file.sgf ...]` to fill in `dead`, `scoreMethod` and `scoreNote`, and check its output: every counted game should match its recorded result, and any adjustment is explained on the score card.
+- Games live in `docs/games/9x9/ogs/` (online games, dead stones as the players marked them) and `docs/games/9x9/pro/` (professional games; only games that end in a count, no resignations or time losses). Each folder has an `index.json` in menu order and a README with sources.
+- Add pro games with `node tools/add-games.mjs docs/games/9x9/pro --root <collection>/9x9 <files...>`. It copies the SGFs, skips games that didn't end in a count or can't be scored to their recorded result, fills in `dead`, `scoreMethod` and `scoreNote`, appends to `index.json` and rebuilds the README tables. Pro records don't mark dead stones, so this scoring step is what makes the score overlay work.
+- To pick games, start from `research/cwi-9x9-scoring.md`: every counted game in the CWI 9x9 collection, already scored (full data in the matching `.json`). Rebuild or extend it with `node tools/survey-collection.mjs <collection>/9x9 research/cwi-9x9-scoring`; it resumes and never rescores a game. Scoring takes about 3 seconds per game, so a full run of the 211 counted games takes over 10 minutes.

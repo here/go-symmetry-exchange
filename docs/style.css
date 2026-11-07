@@ -110,10 +110,7 @@ body {
   padding: 20px;
 }
 
-.panel-title { font-size: 1.25rem; margin: 0 0 16px; }
 
-.field { display: grid; gap: 4px; margin-bottom: 16px; }
-.field span { font-size: .85rem; color: var(--muted); }
 
 select, button, input[type="range"] { font: inherit; color: inherit; }
 
@@ -241,3 +238,5 @@ input[type="range"] { width: 100%; margin: 0 0 16px; accent-color: var(--accent)
 #autoplay[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
 
 .about { font-size: .9rem; margin: -8px 0 12px; color: var(--muted); }
+
+.game-select { margin-bottom: 12px; }

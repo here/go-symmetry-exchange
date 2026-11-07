@@ -16,20 +16,6 @@
     "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
   },
   {
-    "file": "pro-minigo-900414.sgf",
-    "black": "Yamada Wakio",
-    "white": "Yamada Kimio",
-    "result": "B+R",
-    "event": "Mini-Go",
-    "date": "1990-04-14",
-    "rules": "japanese",
-    "about": "Mirror go again: 11 mirrored moves before the game breaks apart. Ends by resignation.",
-    "scored": false,
-    "dead": [],
-    "scoreMethod": "none",
-    "scoreNote": "Result is not a count; no score."
-  },
-  {
     "file": "pro-go-seigen-1968-08-00.sgf",
     "black": "Miyamoto Naoki",
     "white": "Go Seigen",
@@ -93,20 +79,6 @@
     ],
     "scoreMethod": "ownership",
     "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
-  },
-  {
-    "file": "pro-computer-tw.sgf",
-    "black": "MoGoTW9X9",
-    "white": "Zhou Junxun",
-    "result": "B+R",
-    "event": "",
-    "date": "2009-10-26",
-    "rules": "japanese",
-    "about": "The program MoGoTW, as Black, beats Zhou Junxun 9p (2009). Ends by resignation.",
-    "scored": false,
-    "dead": [],
-    "scoreMethod": "none",
-    "scoreNote": "Result is not a count; no score."
   },
   {
     "file": "pro-computer-oz2.sgf",
@@ -191,34 +163,6 @@
     ],
     "scoreMethod": "ownership",
     "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
-  },
-  {
-    "file": "pro-misc-500-dan-celebration.sgf",
-    "black": "Kim Sujun & Kobayashi Izumi & Inori Yoko & Umezawa Yukari & Hosaka Mayu & Hans Pietsch & Takemiya Yoko & Kono Rin",
-    "white": "Cho Chikun",
-    "result": "W+R",
-    "event": "Kitani school 500 dan celebration",
-    "date": "2000-03-28",
-    "rules": "japanese",
-    "about": "Eight Kitani-school pros together as Black against Cho Chikun. Cho wins.",
-    "scored": false,
-    "dead": [],
-    "scoreMethod": "none",
-    "scoreNote": "Result is not a count; no score."
-  },
-  {
-    "file": "pro-minigo-010701.sgf",
-    "black": "Yamazaki Yoshihiro",
-    "white": "Yamamoto Kentaro",
-    "result": "B+T",
-    "event": "Mini-Go",
-    "date": "2001-07-01",
-    "rules": "japanese",
-    "about": "White loses on time, after Black captures a 7-stone group.",
-    "scored": false,
-    "dead": [],
-    "scoreMethod": "none",
-    "scoreNote": "Result is not a count; no score."
   },
   {
     "file": "pro-misc-iyama-6crown-3.sgf",
@@ -386,5 +330,472 @@
     "dead": [],
     "scoreMethod": "ownership",
     "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-011202.sgf",
+    "black": "Yamada Kimio",
+    "white": "Cho Hunhyun",
+    "result": "W+0.5",
+    "event": "Mini-Go",
+    "date": "2001-12-02",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "gg"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-011216.sgf",
+    "black": "Yamada Kimio",
+    "white": "Cho Hunhyun",
+    "result": "B+3.5",
+    "event": "Mini-Go",
+    "date": "2001-12-16",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ca",
+      "ea",
+      "fa",
+      "gb",
+      "gc",
+      "fc",
+      "gd",
+      "ec",
+      "ch",
+      "dh"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-940115.sgf",
+    "black": "Aragaki Shun",
+    "white": "Cho Chikun",
+    "result": "W+0.5",
+    "event": "Mini-Go",
+    "date": "1994-01-15",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "be",
+      "gf",
+      "gg"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-950819.sgf",
+    "black": "Ma Xiaochun",
+    "white": "Tsukuda Akiko",
+    "result": "B+1.5",
+    "event": "Mini-Go",
+    "date": "1995-08-19",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "hf"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-950826.sgf",
+    "black": "Aragaki Shun",
+    "white": "Ma Xiaochun",
+    "result": "W+10.5",
+    "event": "Mini-Go",
+    "date": "1995-08-26",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ci"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-980425.sgf",
+    "black": "Yanagawa Hiromasa",
+    "white": "Ishida Yoshio",
+    "result": "W+4.5",
+    "event": "Mini-Go",
+    "date": "1998-04-25",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "gd"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-981010.sgf",
+    "black": "Yamada Kimio",
+    "white": "Kudo Norio",
+    "result": "W+2.5",
+    "event": "Mini-Go",
+    "date": "1998-10-10",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "gd",
+      "ah",
+      "bi"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-981205.sgf",
+    "black": "Yamada Kimio",
+    "white": "Kudo Norio",
+    "result": "B+0.5",
+    "event": "Mini-Go",
+    "date": "1998-12-05",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-001210.sgf",
+    "black": "Takemiya Masaki",
+    "white": "Yamada Kimio",
+    "result": "B+4.5",
+    "event": "Mini-Go",
+    "date": "2000-12-10",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "dc",
+      "ec",
+      "ge",
+      "he"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-001224.sgf",
+    "black": "Takemiya Masaki",
+    "white": "Yamada Kimio",
+    "result": "W+6.5",
+    "event": "Mini-Go",
+    "date": "2000-12-24",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-misc-iyama-6crown-1.sgf",
+    "black": "Murakawa Daisuke",
+    "white": "Iyama Yuta",
+    "result": "W+1.5",
+    "event": "Iyama 6-crown celebration",
+    "date": "2013-05-12",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "hg",
+      "hh",
+      "gh"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-propairgo-pg2004-d-4.sgf",
+    "black": "Konishi Kazuko, 7p & O Meien, 9p",
+    "white": "Aoki Kikuyo, 8p & Otake Hideo, Honorary Gosei",
+    "result": "W+0.5",
+    "event": "10th Ricoh Pro Pairgo Cup",
+    "date": "2003-12-06",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "hc"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-propairgo-pg2009-d-1.sgf",
+    "black": "Umezawa Yukari, Female Kisei & Imamura Toshiya, 9p",
+    "white": "Konishi Kazuko, 8p & Yoda Norimoto, 9p",
+    "result": "B+0.5",
+    "event": "15th Ricoh Pro Pairgo Cup",
+    "date": "2008-12-06",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ah"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-misc-igofestival2008-p3.sgf",
+    "black": "Aoki Kikuyo",
+    "white": "Izawa Akino",
+    "result": "W+0.5",
+    "event": "Women's 9x9 Match",
+    "date": "2008-09-13",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-020519.sgf",
+    "black": "Yuki Satoshi",
+    "white": "Ko Reibun",
+    "result": "B+2.5",
+    "event": "Mini-Go",
+    "date": "2002-05-19",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "gc"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-980829.sgf",
+    "black": "Umezawa Yukari",
+    "white": "Hasegawa Hiro",
+    "result": "W+3.5",
+    "event": "Mini-Go",
+    "date": "1998-08-29",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "fb",
+      "gb"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-931204.sgf",
+    "black": "Cho Chikun",
+    "white": "Enda Hideki",
+    "result": "B+6.5",
+    "event": "Mini-Go",
+    "date": "1993-12-04",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ff",
+      "cg",
+      "bh",
+      "aa"
+    ],
+    "scoreMethod": "ownership+neutral",
+    "scoreNote": "Monte Carlo ownership; 1 territory point (A9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be."
+  },
+  {
+    "file": "pro-minigo-990529.sgf",
+    "black": "Cho U",
+    "white": "Yamada Wakio",
+    "result": "W+2.5",
+    "event": "Mini-Go",
+    "date": "1999-05-29",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ea",
+      "fa",
+      "ga",
+      "fb",
+      "ha",
+      "bc"
+    ],
+    "scoreMethod": "ownership+result",
+    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 5-stone group at E9 (70% alive); White 1-stone group at B7 (76% alive) treated as dead/dead."
+  },
+  {
+    "file": "pro-minigo-001203.sgf",
+    "black": "Kurahashi Masayuki",
+    "white": "Takemiya Masaki",
+    "result": "B+0.5",
+    "event": "Mini-Go",
+    "date": "2000-12-03",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ih",
+      "di"
+    ],
+    "scoreMethod": "ownership+result",
+    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 1-stone group at D1 (69% alive) treated as dead."
+  },
+  {
+    "file": "pro-minigo-981024.sgf",
+    "black": "Yamada Kimio",
+    "white": "Kudo Norio",
+    "result": "B+0.5",
+    "event": "Mini-Go",
+    "date": "1998-10-24",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "aa"
+    ],
+    "scoreMethod": "ownership+neutral",
+    "scoreNote": "Monte Carlo ownership; 1 territory point (A9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be."
+  },
+  {
+    "file": "pro-minigo-890826.sgf",
+    "black": "Tanaka Hideharu",
+    "white": "Hayashi Kozo",
+    "result": "B+0.5",
+    "event": "Mini-Go",
+    "date": "1989-08-26",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ga",
+      "gb",
+      "ib",
+      "hc",
+      "id",
+      "bg",
+      "cg",
+      "bh"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-881105.sgf",
+    "black": "Tanimura Yoshiyuki",
+    "white": "Hayashi Kozo",
+    "result": "B+3.5",
+    "event": "Mini-Go",
+    "date": "1988-11-05",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-890408.sgf",
+    "black": "Minematsu Masaki",
+    "white": "Aragaki Shun",
+    "result": "W+1.5",
+    "event": "Mini-Go",
+    "date": "1989-04-08",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "be"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-900505.sgf",
+    "black": "Konno Tameto",
+    "white": "Yamada Wakio",
+    "result": "W+1.5",
+    "event": "Mini-Go",
+    "date": "1990-05-05",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-890415.sgf",
+    "black": "Takabayashi Masahiro",
+    "white": "Hayashi Kozo",
+    "result": "B+0.5",
+    "event": "Mini-Go",
+    "date": "1989-04-15",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "dd",
+      "gd"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-881231.sgf",
+    "black": "Sasaka Shiro",
+    "white": "Hashiguchi Mika",
+    "result": "B+12.5",
+    "event": "Mini-Go",
+    "date": "1988-12-31",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "hb",
+      "hc",
+      "cg"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-nhk-newyear2009-1.sgf",
+    "black": "Mannami Nao",
+    "white": "Uchida Shuhei",
+    "result": "W+0.5",
+    "event": "New Year 2009",
+    "date": "2009-01-04",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "dc"
+    ],
+    "scoreMethod": "ownership",
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+  },
+  {
+    "file": "pro-minigo-960921.sgf",
+    "black": "Kori Toshio",
+    "white": "Sakakibara Fumiko",
+    "result": "W+0.5",
+    "event": "Mini-Go",
+    "date": "1996-09-21",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "ea",
+      "fa",
+      "hg"
+    ],
+    "scoreMethod": "ownership+result",
+    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 1-stone group at H3 (58% alive); White 2-stone group at E9 (78% alive) treated as dead/dead."
+  },
+  {
+    "file": "pro-minigo-971108.sgf",
+    "black": "Aragaki Shun",
+    "white": "Ruan Yunsheng",
+    "result": "W+0.5",
+    "event": "Mini-Go",
+    "date": "1997-11-08",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "bc",
+      "aa",
+      "ba"
+    ],
+    "scoreMethod": "ownership+neutral",
+    "scoreNote": "Monte Carlo ownership; 2 territory points (A9, B9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be."
   }
 ]

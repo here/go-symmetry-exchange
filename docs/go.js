@@ -137,6 +137,8 @@ export function parseSGF(text) {
     handicap: parseInt(get("HA"), 10) || 0,
     black: get("PB"),
     white: get("PW"),
+    blackRank: get("BR"),
+    whiteRank: get("WR"),
     result: get("RE"),
     setup,
     moves,

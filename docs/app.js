@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107080224";
-import { isActive } from "./slides.js?v=20261107080224";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107083018";
+import { isActive } from "./slides.js?v=20261107083018";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const VERSION = new URL(import.meta.url).search;
@@ -36,7 +36,7 @@ function createBoard(root, gamesDir, title) {
   root.appendChild(document.getElementById("board-template").content.cloneNode(true));
   const $ = (role) => root.querySelector(`[data-role="${role}"]`);
   const svg = $("board");
-  $("title").textContent = title || "Go board";
+  svg.setAttribute("aria-label", `${title || "Go"} board`);
 
   // ---- state -----------------------------------------------------------
   let game = null;        // parsed SGF (or an empty game)
@@ -173,8 +173,10 @@ function createBoard(root, gamesDir, title) {
       svgEl("circle", { class: `last ${last.color === BLACK ? "on-b" : "on-w"}`, cx: last.pt % n, cy: Math.floor(last.pt / n), r: .22 }, stonesLayer);
     }
 
-    $("pb").textContent = game.black || "–";
-    $("pw").textContent = game.white || "–";
+    // Name plus rank where the record has one (BR/WR), e.g. "Cho Chikun 9p".
+    const who = (name, rank) => [name, rank].filter(Boolean).join(" ") || "–";
+    $("pb").textContent = who(game.black, game.blackRank);
+    $("pw").textContent = who(game.white, game.whiteRank);
     $("komi").textContent = game.komi || "–";
     $("result").textContent = game.result || "–";
     $("caps").textContent = `● ${s.caps[BLACK]}  ○ ${s.caps[WHITE]}`;
