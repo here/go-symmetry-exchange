@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107075921";
-import { isActive } from "./slides.js?v=20261107075921";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107080224";
+import { isActive } from "./slides.js?v=20261107080224";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const VERSION = new URL(import.meta.url).search;
@@ -84,12 +84,19 @@ function createBoard(root, gamesDir, title) {
     divergedAt = null;
     rebuild();
     cur = 0;
+    edgeShownAt = Date.now();
     drawGrid();
     render();
   }
 
+  // When the current game's first or last position came on screen, so a held
+  // or fast-repeated arrow key can't run straight past it into another game.
+  let edgeShownAt = 0;
+
   function goTo(n) {
+    const was = cur;
     cur = Math.max(0, Math.min(line.length, n));
+    if (cur !== was && (cur === 0 || cur === line.length)) edgeShownAt = Date.now();
     render();
   }
 
@@ -313,11 +320,13 @@ function createBoard(root, gamesDir, title) {
     if (e.key === "p" || e.key === "P") { e.preventDefault(); setAutoplay(!autoGen); return; }
     // → at the last move (the scoring screen) goes to the next game;
     // ← at move 0 goes back to the previous game, shown at its last move.
-    const onRecord = divergedAt === null && gameList.length;
-    if (e.key === "ArrowRight" && onRecord && cur === line.length) {
+    // Only a fresh key press, on a position that has been showing for a moment.
+    const canSwitch = divergedAt === null && gameList.length && line.length > 0 &&
+      !e.repeat && Date.now() - edgeShownAt > 400;
+    if (e.key === "ArrowRight" && canSwitch && cur === line.length) {
       e.preventDefault(); setAutoplay(false); nextGame().catch(showError); return;
     }
-    if (e.key === "ArrowLeft" && onRecord && cur === 0) {
+    if (e.key === "ArrowLeft" && canSwitch && cur === 0) {
       e.preventDefault(); setAutoplay(false); prevGame().catch(showError); return;
     }
     const keys = { ArrowLeft: cur - 1, ArrowRight: cur + 1, Home: 0, End: line.length };
