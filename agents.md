@@ -109,3 +109,18 @@ Have these ready if time allows or questions come up:
 
 Open question: which two games do you want to use? Send them and I'll add diagrams.
 
+
+## Development notes
+
+### Cache busting
+
+GitHub Pages serves files with `cache-control: max-age=600`, so after a push a browser can show the new `index.html` with a stale `app.js` for up to 10 minutes. New buttons then appear but do nothing.
+
+The strategy: every CSS and JS link carries one shared version query, `?v=<version>`.
+
+- `docs/index.html` loads `style.css?v=…` and `app.js?v=…`. It loads only `app.js`; `app.js` imports `slides.js?v=…` and `go.js?v=…`.
+- `app.js` reads its own `?v=…` (`import.meta.url`) and adds it to the game fetches (`games/9x9/index.json`, the SGFs).
+- **Before every push that changes `docs/`, run `tools/bump-version.sh`.** It stamps a new UTC timestamp on every `?v=` in `index.html` and `app.js`.
+- Keep every `?v=` identical. A module imported under two different URLs runs twice; for `slides.js` that would build the slide controls twice.
+- When adding a new JS module or stylesheet, give its link or import a `?v=` too, so the bump script covers it.
+- Images are not versioned. If you replace an image, give it a new file name.

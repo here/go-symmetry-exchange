@@ -1,5 +1,8 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js";
-import { isActive } from "./slides.js";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107074206";
+import { isActive } from "./slides.js?v=20261107074206";
+
+// Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
+const VERSION = new URL(import.meta.url).search;
 
 const GAMES_DIR = "games/9x9/";
 const SVG = "http://www.w3.org/2000/svg";
@@ -345,7 +348,7 @@ async function nextGame() {
 let gameList = [];
 
 async function loadFile(file) {
-  const res = await fetch(GAMES_DIR + file);
+  const res = await fetch(GAMES_DIR + file + VERSION);
   if (!res.ok) throw new Error(`${file}: HTTP ${res.status}`);
   const g = parseSGF(await res.text());
   const meta = gameList.find((m) => m.file === file);
@@ -359,7 +362,7 @@ async function init() {
   const select = $("game-select");
   loadGame(blankGame(9));
   try {
-    const res = await fetch(GAMES_DIR + "index.json");
+    const res = await fetch(GAMES_DIR + "index.json" + VERSION);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const games = gameList = await res.json();
     select.innerHTML = `<option value="">Empty board</option>` +
