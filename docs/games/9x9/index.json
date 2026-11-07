@@ -1,0 +1,68 @@
+[
+  {
+    "file": "ogs-10903248.sgf",
+    "black": "jladd",
+    "white": "anoek",
+    "result": "B+0.5"
+  },
+  {
+    "file": "ogs-2326881.sgf",
+    "black": "dpy",
+    "white": "anoek",
+    "result": "B+10.5"
+  },
+  {
+    "file": "ogs-25533842.sgf",
+    "black": "anoek",
+    "white": "NinjaStar",
+    "result": "W+2.5"
+  },
+  {
+    "file": "ogs-92276718.sgf",
+    "black": "GnuGo",
+    "white": "TerHuckerby",
+    "result": "B+9.5"
+  },
+  {
+    "file": "ogs-92276808.sgf",
+    "black": "GnuGo",
+    "white": "TerHuckerby",
+    "result": "W+6.5"
+  },
+  {
+    "file": "ogs-92276911.sgf",
+    "black": "yidojiang",
+    "white": "GnuGo",
+    "result": "B+6.5"
+  },
+  {
+    "file": "ogs-92277611.sgf",
+    "black": "playforfun10000",
+    "white": "GnuGo",
+    "result": "B+5.5"
+  },
+  {
+    "file": "ogs-92277658.sgf",
+    "black": "TerHuckerby",
+    "white": "GnuGo",
+    "result": "B+5.5"
+  },
+  {
+    "file": "ogs-92277815.sgf",
+    "black": "TerHuckerby",
+    "white": "GnuGo",
+    "result": "W+0.5"
+  },
+  {
+    "file": "ogs-92277833.sgf",
+    "black": "TerHuckerby",
+    "white": "GnuGo",
+    "result": "B+7.5"
+  },
+  {
+    "file": "ogs-92277871.sgf",
+    "black": "TerHuckerby",
+    "white": "GnuGo",
+    "result": "W+R"
+  }
+]
