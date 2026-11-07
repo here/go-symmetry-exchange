@@ -119,8 +119,13 @@ GitHub Pages serves files with `cache-control: max-age=600`, so after a push a b
 The strategy: every CSS and JS link carries one shared version query, `?v=<version>`.
 
 - `docs/index.html` loads `style.css?v=…` and `app.js?v=…`. It loads only `app.js`; `app.js` imports `slides.js?v=…` and `go.js?v=…`.
-- `app.js` reads its own `?v=…` (`import.meta.url`) and adds it to the game fetches (`games/9x9/index.json`, the SGFs).
+- `app.js` reads its own `?v=…` (`import.meta.url`) and adds it to the game fetches (each board's `index.json` and SGFs).
 - **Before every push that changes `docs/`, run `tools/bump-version.sh`.** It stamps a new UTC timestamp on every `?v=` in `index.html` and `app.js`.
 - Keep every `?v=` identical. A module imported under two different URLs runs twice; for `slides.js` that would build the slide controls twice.
 - When adding a new JS module or stylesheet, give its link or import a `?v=` too, so the bump script covers it.
 - Images are not versioned. If you replace an image, give it a new file name.
+
+### Game data and scoring
+
+- Games live in `docs/games/9x9/ogs/` (online games, dead stones as the players marked them) and `docs/games/9x9/pro/` (professional games). Each folder has an `index.json` in menu order and a README with sources.
+- Pro records don't mark dead stones. After adding pro games, run `node tools/score-games.mjs docs/games/9x9/pro [file.sgf ...]` to fill in `dead`, `scoreMethod` and `scoreNote`, and check its output: every counted game should match its recorded result, and any adjustment is explained on the score card.

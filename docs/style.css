@@ -95,7 +95,7 @@ body {
 
 .board-wrap { display: flex; justify-content: center; }
 
-#board {
+.board {
   width: min(100%, calc(100vh - 48px));
   aspect-ratio: 1;
   display: block;
@@ -168,7 +168,7 @@ input[type="range"] { width: 100%; margin: 0 0 16px; accent-color: var(--accent)
 
 @media (max-width: 800px) {
   .layout { grid-template-columns: 1fr; }
-  #board { width: 100%; }
+  .board { width: 100%; }
 }
 
 /* slide show */
@@ -239,3 +239,5 @@ input[type="range"] { width: 100%; margin: 0 0 16px; accent-color: var(--accent)
 /* autoplay */
 .controls.autoplay select { flex: 1; width: auto; }
 #autoplay[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+
+.about { font-size: .9rem; margin: -8px 0 12px; color: var(--muted); }
