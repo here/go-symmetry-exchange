@@ -18,16 +18,28 @@ Opening `index.html` straight from disk (`file://`) won't work, because browsers
 
 ## Use
 
+The page is a slide show: one section (`.slide`) fills the screen at a time.
+
+- **Next / previous slide:** Space / Shift+Space, Page Down / Page Up (what most presentation clickers send), or the ‹ › buttons bottom right. On slides without a board, the arrow keys also work.
+- **Full screen:** F, or the ⛶ button. Esc leaves.
+- **Jump to a slide:** the address tracks the slide (`#/2`), so reloads and links keep your place. `#demo` also works.
+- **Touch:** swipe left or right outside the board.
+- **New slides:** add an element with class `slide` to `index.html`. Give it `data-keys="board"` if its arrow keys should drive a board instead of the slides.
+
+On the board slide:
+
 - Step through a game with the buttons, the slider, or ← → Home End.
 - Click an empty point to play the next move. If it matches the recorded move, you just step forward. Otherwise you start your own line from that point, and **Back to game** returns to the record.
 - The board enforces captures, no suicide, and simple ko.
+- At the last move of a recorded game, a score overlay shows territory (small squares), dead stones (faded) and a score card with captures, komi and the total. The **Show score** checkbox turns it off. Games that ended by resignation say there was no count.
 
 ## Files
 
 - `index.html`, `style.css`: the page.
+- `slides.js`: slide show navigation and full screen.
 - `app.js`: board rendering, controls, and game loading.
 - `go.js`: Go rules and the SGF parser (main line only).
-- `games/9x9/index.json`: the list of games shown in the menu. Regenerate it after adding SGFs.
+- `games/9x9/index.json`: the list of games shown in the menu, plus each game's `rules`, whether it was `scored`, and `dead`: the points OGS marked at the end (SGF coordinates; a stone there is dead, an empty point is neutral). The SGF files don't record these, so they come from the OGS game API (`https://online-go.com/api/v1/games/<id>`, fields `rules`, `removed`, `score`). Update it when adding games.
 
 ## GitHub Pages
 

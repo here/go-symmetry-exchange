@@ -1,4 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF } from "./go.js";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js";
+import { isActive } from "./slides.js";
 
 const GAMES_DIR = "games/9x9/";
 const SVG = "http://www.w3.org/2000/svg";
@@ -19,10 +20,18 @@ let line = [];       // moves currently in effect
 let states = [];     // states[i] = position after i moves of `line`
 let cur = 0;         // number of moves shown
 let divergedAt = null; // move index where the user left the recorded game
+let showScore = true;   // show the score overlay at the end of a recorded game
 
 function blankGame(size = 9) {
   return { size, komi: "", handicap: 0, black: "", white: "", result: "",
-           setup: { [BLACK]: [], [WHITE]: [] }, moves: [] };
+           setup: { [BLACK]: [], [WHITE]: [] }, moves: [], ending: null };
+}
+
+// The end-of-game score, when the recorded game is on screen at its last move.
+function finalScore() {
+  const e = game.ending;
+  if (!e || !e.scored || divergedAt !== null || cur !== line.length) return null;
+  return score(states[cur], { dead: e.dead, komi: game.komi, rules: e.rules, handicap: game.handicap });
 }
 
 function initialState() {
@@ -127,14 +136,26 @@ function starPoints(n) {
 
 function render() {
   const s = states[cur], n = game.size;
+  const sc = showScore ? finalScore() : null;
+  const dead = new Set(sc ? sc.dead : []);
   stonesLayer.innerHTML = "";
   for (let pt = 0; pt < s.board.length; pt++) {
     const c = s.board[pt];
     if (c === EMPTY) continue;
-    el("circle", { class: `stone ${c === BLACK ? "b" : "w"}`, cx: pt % n, cy: Math.floor(pt / n), r: .47 }, stonesLayer);
+    el("circle", { class: `stone ${c === BLACK ? "b" : "w"}${dead.has(pt) ? " dead" : ""}`, cx: pt % n, cy: Math.floor(pt / n), r: .47 }, stonesLayer);
   }
+  if (sc) {
+    // Territory marks: a small square of the owner's colour on each scored point
+    // (including points under dead stones).
+    for (const c of [BLACK, WHITE]) {
+      for (const pt of sc.territory[c]) {
+        el("rect", { class: `terr ${c === BLACK ? "b" : "w"}`, x: pt % n - .17, y: Math.floor(pt / n) - .17, width: .34, height: .34 }, stonesLayer);
+      }
+    }
+  }
+  renderScorecard(sc);
   const last = line[cur - 1];
-  if (last && last.pt !== null) {
+  if (!sc && last && last.pt !== null) {
     el("circle", { class: `last ${last.color === BLACK ? "on-b" : "on-w"}`, cx: last.pt % n, cy: Math.floor(last.pt / n), r: .22 }, stonesLayer);
   }
 
@@ -153,6 +174,45 @@ function render() {
 
   setStatus();
   ghost.setAttribute("class", `ghost stone ${toPlay() === BLACK ? "b" : "w"}`);
+}
+
+function renderScorecard(sc) {
+  const card = $("scorecard");
+  const atEnd = game.ending && divergedAt === null && cur === line.length && line.length > 0;
+  if (!atEnd || !showScore) { card.hidden = true; return; }
+  card.hidden = false;
+
+  if (!sc) {
+    card.innerHTML = `<h3>Final position</h3><p class="score-note">${game.result ? `Result ${game.result}. ` : ""}The game ended without a count, so there is no score to show.</p>`;
+    return;
+  }
+
+  const B = BLACK, W = WHITE;
+  const rows = [["Territory", sc.territory[B].length, sc.territory[W].length]];
+  if (sc.japanese) {
+    rows.push(["Captures", sc.captures[B], sc.captures[W]]);
+    rows.push(["Dead stones", sc.deadCaptured[B], sc.deadCaptured[W]]);
+  } else {
+    rows.push(["Stones on board", sc.stones[B], sc.stones[W]]);
+  }
+  rows.push(["Komi", "", sc.komi]);
+  if (sc.handicapBonus) rows.push(["Handicap", "", sc.handicapBonus]);
+
+  const diff = sc.totals[B] - sc.totals[W];
+  const res = diff === 0 ? "Jigo (draw)" : `${diff > 0 ? "B" : "W"}+${Math.abs(diff)}`;
+  const rules = game.ending.rules ? game.ending.rules[0].toUpperCase() + game.ending.rules.slice(1) : "";
+
+  card.innerHTML = `
+    <h3>Final score</h3>
+    <table class="score">
+      <thead><tr><th></th><th><span class="dot black"></span> Black</th><th><span class="dot white"></span> White</th></tr></thead>
+      <tbody>${rows.map(([k, b, w]) => `<tr><th>${k}</th><td>${b}</td><td>${w}</td></tr>`).join("")}</tbody>
+      <tfoot><tr><th>Total</th><td>${sc.totals[B]}</td><td>${sc.totals[W]}</td></tr></tfoot>
+    </table>
+    <p class="score-note"><strong>${res}</strong> · ${rules} rules: ${sc.japanese
+      ? "territory + captures + dead stones."
+      : `stones + territory. Captures (● ${sc.captures[B]}, ○ ${sc.captures[W]}) don't add to the score.`}
+      Squares mark territory; faded stones are dead.</p>`;
 }
 
 function setStatus(extra = "") {
@@ -207,20 +267,28 @@ $("last").onclick = () => goTo(line.length);
 $("slider").oninput = (e) => goTo(+e.target.value);
 $("pass").onclick = () => userMove(null);
 $("back-to-game").onclick = backToGame;
+$("show-score").onchange = (e) => { showScore = e.target.checked; render(); };
 $("clear").onclick = () => { $("game-select").value = ""; loadGame(blankGame(9)); };
 
 document.addEventListener("keydown", (e) => {
-  if (e.target.closest("select, input")) return;
+  if (e.target.closest("select, input") || !isActive(svg)) return;
   const keys = { ArrowLeft: cur - 1, ArrowRight: cur + 1, Home: 0, End: line.length };
   if (e.key in keys) { e.preventDefault(); goTo(keys[e.key]); }
 });
 
 // ---- game list ---------------------------------------------------------
 
+let gameList = [];
+
 async function loadFile(file) {
   const res = await fetch(GAMES_DIR + file);
   if (!res.ok) throw new Error(`${file}: HTTP ${res.status}`);
-  loadGame(parseSGF(await res.text()));
+  const g = parseSGF(await res.text());
+  const meta = gameList.find((m) => m.file === file);
+  if (meta) {
+    g.ending = { rules: meta.rules, scored: !!meta.scored, dead: (meta.dead || []).map((p) => sgfPoint(p, g.size)) };
+  }
+  loadGame(g);
 }
 
 async function init() {
@@ -229,7 +297,7 @@ async function init() {
   try {
     const res = await fetch(GAMES_DIR + "index.json");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const games = await res.json();
+    const games = gameList = await res.json();
     select.innerHTML = `<option value="">Empty board</option>` +
       games.map((g) => `<option value="${g.file}">${g.black} vs ${g.white} (${g.result})</option>`).join("");
     select.onchange = () => (select.value ? loadFile(select.value) : loadGame(blankGame(9))).catch(showError);

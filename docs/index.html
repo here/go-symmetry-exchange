@@ -3,17 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Go Board</title>
+  <title>Plot, Symmetry and Exchange</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="layout">
+  <!-- Each .slide is one screen of the talk. -->
+  <header class="slide title-slide" id="title">
+    <p class="kicker">The board game Go</p>
+    <h1 class="title">plot, symmetry and exchange</h1>
+    <p class="subtitle">A 30-minute introduction: two ideas, three shapes, and groups that live with two eyes.</p>
+    <p class="byline">Placeholder · speaker · date</p>
+  </header>
+
+  <main class="slide layout" id="demo" data-keys="board">
     <section class="board-wrap">
       <svg id="board" role="img" aria-label="Go board"></svg>
     </section>
 
     <aside class="panel">
-      <h1>Go board</h1>
+      <h2 class="panel-title">Go board</h2>
 
       <label class="field">
         <span>Game</span>
@@ -30,6 +38,8 @@
 
       <p id="status" class="status" aria-live="polite"></p>
 
+      <section id="scorecard" class="scorecard" hidden aria-live="polite"></section>
+
       <div class="controls">
         <button id="first" title="First move (Home)">⏮</button>
         <button id="prev" title="Previous move (←)">◀</button>
@@ -43,10 +53,39 @@
         <button id="back-to-game" hidden>Back to game</button>
         <button id="clear">Empty board</button>
       </div>
+      <label class="check"><input id="show-score" type="checkbox" checked> Show score at the end of a game</label>
 
-      <p class="hint">Click the board to play the next move. Playing off the recorded game starts your own line; “Back to game” returns to the record.</p>
+      <p class="hint">← → step through moves; Page Up/Down or Space change slides. Click the board to play the next move. Playing off the recorded game starts your own line; “Back to game” returns to the record.</p>
     </aside>
   </main>
+
+  <section class="slide toc-slide" id="contents">
+    <h2>Contents</h2>
+    <ol class="toc">
+      <li><span class="toc-name">How I got here</span><span class="toc-idea">Why a human game still matters after Deep Blue</span><span class="toc-min">3 min</span></li>
+      <li><span class="toc-name">Proverbs</span><span class="toc-idea">Symmetry and exchange as a way of seeing</span><span class="toc-min">4 min</span></li>
+      <li><span class="toc-name">Reading a board</span><span class="toc-idea">A simple 9x9 and how to read a diagram</span><span class="toc-min">4 min</span></li>
+      <li><span class="toc-name">Shapes</span><span class="toc-idea">Bamboo, tortoise shell, ponnuki, and the empty triangle to avoid</span><span class="toc-min">6 min</span></li>
+      <li><span class="toc-name">Groups and two eyes</span><span class="toc-idea">A group lives with two eyes</span><span class="toc-min">8 min</span></li>
+      <li><span class="toc-name">Tactics</span><span class="toc-idea">Shi, the one-space jump, sente</span><span class="toc-min">3 min</span></li>
+      <li><span class="toc-name">Keep learning</span><span class="toc-idea">Tsume-go, playing in person, handicaps</span><span class="toc-min">2 min</span></li>
+    </ol>
+    <p class="hint">Placeholder: each entry will link to its section's slides.</p>
+  </section>
+
+  <section class="slide image-slide" id="already-won">
+    <figure>
+      <img src="images/already-won.webp" width="1200" height="1200"
+           alt="Four-panel comic. Two characters sit at a board game. One asks, “So what's your primary tactical goal this turn?” The other answers, “To have fun.” “No, I mean, what are your winning conditions?” “Spending time with you.” Last panel: “Do what you must, I have already won.”">
+      <figcaption>Comic: <a href="https://foxes-in-love.tumblr.com/post/832538472462123008" target="_blank" rel="noopener">foxes and friends</a></figcaption>
+    </figure>
+    <div class="image-text">
+      <h2>Placeholder heading</h2>
+      <p>Placeholder text: what this slide is for, and the point to make while it's on screen.</p>
+    </div>
+  </section>
+
+  <script type="module" src="slides.js"></script>
   <script type="module" src="app.js"></script>
 </body>
 </html>
