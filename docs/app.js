@@ -221,6 +221,7 @@ function setStatus(extra = "") {
   const parts = [`Move ${cur} of ${line.length}`];
   if (last && last.pt === null) parts.push(`${last.color === BLACK ? "Black" : "White"} passed`);
   if (divergedAt !== null) parts.push(`your line from move ${divergedAt}`);
+  if (autoGen) parts.push(cur === line.length ? "autoplay: next game soon" : "autoplay");
   $("status").textContent = `${who} to play · ${parts.join(" · ")}${extra ? " · " + extra : ""}`;
 }
 
@@ -246,7 +247,7 @@ function pointFromEvent(ev) {
 
 svg.addEventListener("click", (ev) => {
   const pt = pointFromEvent(ev);
-  if (pt !== null) userMove(pt);
+  if (pt !== null) { setAutoplay(false); userMove(pt); }
 });
 svg.addEventListener("pointermove", (ev) => {
   const pt = pointFromEvent(ev);
@@ -260,21 +261,84 @@ svg.addEventListener("pointermove", (ev) => {
 });
 svg.addEventListener("pointerleave", () => ghost.setAttribute("visibility", "hidden"));
 
-$("first").onclick = () => goTo(0);
-$("prev").onclick = () => goTo(cur - 1);
-$("next").onclick = () => goTo(cur + 1);
-$("last").onclick = () => goTo(line.length);
-$("slider").oninput = (e) => goTo(+e.target.value);
-$("pass").onclick = () => userMove(null);
-$("back-to-game").onclick = backToGame;
+// Any manual step or move stops autoplay.
+const manual = (fn) => (...args) => { setAutoplay(false); fn(...args); };
+
+$("first").onclick = manual(() => goTo(0));
+$("prev").onclick = manual(() => goTo(cur - 1));
+$("next").onclick = manual(() => goTo(cur + 1));
+$("last").onclick = manual(() => goTo(line.length));
+$("slider").oninput = manual((e) => goTo(+e.target.value));
+$("pass").onclick = manual(() => userMove(null));
+$("back-to-game").onclick = manual(backToGame);
+$("autoplay").onclick = () => setAutoplay(!autoGen);
+$("speed").onchange = () => { if (autoGen) setAutoplay(true); };
 $("show-score").onchange = (e) => { showScore = e.target.checked; render(); };
-$("clear").onclick = () => { $("game-select").value = ""; loadGame(blankGame(9)); };
+$("clear").onclick = () => { setAutoplay(false); $("game-select").value = ""; loadGame(blankGame(9)); };
 
 document.addEventListener("keydown", (e) => {
   if (e.target.closest("select, input") || !isActive(svg)) return;
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+  if (e.key === "p" || e.key === "P") { e.preventDefault(); setAutoplay(!autoGen); return; }
   const keys = { ArrowLeft: cur - 1, ArrowRight: cur + 1, Home: 0, End: line.length };
-  if (e.key in keys) { e.preventDefault(); goTo(keys[e.key]); }
+  if (e.key in keys) { e.preventDefault(); setAutoplay(false); goTo(keys[e.key]); }
 });
+
+// ---- autoplay ----------------------------------------------------------
+// Steps one move per tick at the chosen speed. At the end of a game it holds
+// the final (scoring) position for HOLD_AT_END ticks, then loads the next game
+// in the list, wrapping around. Off by default; manual input stops it.
+// It pauses while another slide is showing and resumes on return.
+
+const HOLD_AT_END = 10;
+let autoGen = 0;      // 0 = off; otherwise the id of the running tick chain
+let autoTimer = null;
+let holdLeft = 0;
+
+function setAutoplay(on) {
+  clearTimeout(autoTimer);
+  autoTimer = null;
+  autoGen = on ? autoGen + 1 || 1 : 0;
+  const btn = $("autoplay");
+  btn.textContent = on ? "⏸ Pause" : "▶ Autoplay";
+  btn.setAttribute("aria-pressed", String(on));
+  if (on) {
+    if (divergedAt !== null) backToGame();
+    holdLeft = HOLD_AT_END;
+    schedule(autoGen);
+  }
+  setStatus();
+}
+
+function schedule(gen) {
+  autoTimer = setTimeout(() => tick(gen), +$("speed").value);
+}
+
+async function tick(gen) {
+  if (gen !== autoGen) return;
+  // Paused while another slide is on screen; resumes where it left off.
+  if (!isActive(svg)) { schedule(gen); return; }
+  if (cur < line.length) {
+    goTo(cur + 1);
+    holdLeft = HOLD_AT_END;
+  } else if (holdLeft > 0) {
+    holdLeft--;
+  } else {
+    try { await nextGame(); } catch (err) { showError(err); setAutoplay(false); return; }
+    if (gen !== autoGen) return;
+    holdLeft = HOLD_AT_END;
+  }
+  if (gen === autoGen) schedule(gen);
+}
+
+async function nextGame() {
+  if (!gameList.length) { goTo(0); return; }
+  const select = $("game-select");
+  const i = gameList.findIndex((g) => g.file === select.value);
+  const next = gameList[(i + 1) % gameList.length];
+  select.value = next.file;
+  await loadFile(next.file);
+}
 
 // ---- game list ---------------------------------------------------------
 

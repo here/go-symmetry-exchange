@@ -48,14 +48,22 @@
       </div>
       <input id="slider" type="range" min="0" max="0" value="0" aria-label="Move number">
 
+      <div class="controls autoplay">
+        <button id="autoplay" aria-pressed="false" title="Autoplay (P)">▶ Autoplay</button>
+        <select id="speed" aria-label="Autoplay speed">
+          <option value="2000">Slow · 2 s</option>
+          <option value="1000" selected>Normal · 1 s</option>
+          <option value="500">Fast · 0.5 s</option>
+          <option value="250">Very fast · 0.25 s</option>
+        </select>
+      </div>
+
       <div class="controls">
         <button id="pass">Pass</button>
         <button id="back-to-game" hidden>Back to game</button>
         <button id="clear">Empty board</button>
       </div>
       <label class="check"><input id="show-score" type="checkbox" checked> Show score at the end of a game</label>
-
-      <p class="hint">← → step through moves; Page Up/Down or Space change slides. Click the board to play the next move. Playing off the recorded game starts your own line; “Back to game” returns to the record.</p>
     </aside>
   </main>
 
