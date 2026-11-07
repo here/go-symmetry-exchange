@@ -12,7 +12,7 @@ python3 -m http.server 8000 --directory docs
 ```
 
 Then open http://localhost:8000/ in a browser.
-To open a particular game directly, add `?game=ogs-10903248.sgf` to the URL.
+To open a particular game directly, add `?game=pro-minigo-931106.sgf` to the URL.
 
 Opening `index.html` straight from disk (`file://`) won't work, because browsers block `fetch` there.
 
@@ -40,7 +40,8 @@ On the board slide:
 - `slides.js`: slide show navigation and full screen.
 - `app.js`: board rendering, controls, and game loading.
 - `go.js`: Go rules and the SGF parser (main line only).
-- `games/9x9/index.json`: the list of games shown in the menu, plus each game's `rules`, whether it was `scored`, and `dead`: the points OGS marked at the end (SGF coordinates; a stone there is dead, an empty point is neutral). The SGF files don't record these, so they come from the OGS game API (`https://online-go.com/api/v1/games/<id>`, fields `rules`, `removed`, `score`). Update it when adding games.
+- `games/9x9/index.json`: the list of games shown in the menu, plus each game's `rules` (`japanese` or `chinese`), whether it was `scored`, and `dead`: points marked dead at the end (SGF coordinates; a stone there is dead, an empty point is neutral). The current pro games all count correctly with no dead marks, so `dead` is empty. Update it when adding games, and check the overlay's result matches the SGF's `RE`.
+- `games/9x9/README.md`: where the games come from, with players, events and results.
 
 ## GitHub Pages
 

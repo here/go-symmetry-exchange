@@ -1,119 +1,123 @@
 [
   {
-    "file": "ogs-10903248.sgf",
-    "black": "jladd",
-    "white": "anoek",
-    "result": "B+0.5",
+    "file": "pro-minigo-931106.sgf",
+    "black": "Yanagawa Hiromasa",
+    "white": "Cho Chikun",
+    "result": "W+3.5",
+    "event": "Mini-Go",
+    "date": "1993-11-06",
     "rules": "japanese",
     "scored": true,
-    "dead": [
-      "ga",
-      "ia",
-      "ai"
-    ]
-  },
-  {
-    "file": "ogs-2326881.sgf",
-    "black": "dpy",
-    "white": "anoek",
-    "result": "B+10.5",
-    "rules": "japanese",
-    "scored": true,
-    "dead": [
-      "ca",
-      "ea",
-      "db"
-    ]
-  },
-  {
-    "file": "ogs-25533842.sgf",
-    "black": "anoek",
-    "white": "NinjaStar",
-    "result": "W+2.5",
-    "rules": "japanese",
-    "scored": true,
-    "dead": [
-      "dc"
-    ]
-  },
-  {
-    "file": "ogs-92276718.sgf",
-    "black": "GnuGo",
-    "white": "TerHuckerby",
-    "result": "B+9.5",
-    "rules": "chinese",
-    "scored": true,
     "dead": []
   },
   {
-    "file": "ogs-92276808.sgf",
-    "black": "GnuGo",
-    "white": "TerHuckerby",
-    "result": "W+6.5",
-    "rules": "chinese",
-    "scored": true,
-    "dead": []
-  },
-  {
-    "file": "ogs-92276911.sgf",
-    "black": "yidojiang",
-    "white": "GnuGo",
-    "result": "B+6.5",
-    "rules": "chinese",
-    "scored": true,
-    "dead": []
-  },
-  {
-    "file": "ogs-92277611.sgf",
-    "black": "playforfun10000",
-    "white": "GnuGo",
-    "result": "B+5.5",
-    "rules": "chinese",
-    "scored": true,
-    "dead": [
-      "dd",
-      "ce",
-      "de",
-      "ge",
-      "he"
-    ]
-  },
-  {
-    "file": "ogs-92277658.sgf",
-    "black": "TerHuckerby",
-    "white": "GnuGo",
-    "result": "B+5.5",
-    "rules": "chinese",
-    "scored": true,
-    "dead": []
-  },
-  {
-    "file": "ogs-92277815.sgf",
-    "black": "TerHuckerby",
-    "white": "GnuGo",
+    "file": "pro-minigo-931030.sgf",
+    "black": "Yamada Wakio",
+    "white": "Cho Chikun",
     "result": "W+0.5",
-    "rules": "chinese",
+    "event": "Mini-Go",
+    "date": "1993-10-30",
+    "rules": "japanese",
     "scored": true,
     "dead": []
   },
   {
-    "file": "ogs-92277833.sgf",
-    "black": "TerHuckerby",
-    "white": "GnuGo",
-    "result": "B+7.5",
-    "rules": "chinese",
+    "file": "pro-minigo-950909.sgf",
+    "black": "Kurahashi Masayuki",
+    "white": "Ma Xiaochun",
+    "result": "B+4.5",
+    "event": "Mini-Go",
+    "date": "1995-09-09",
+    "rules": "japanese",
     "scored": true,
-    "dead": [
-      "fd"
-    ]
+    "dead": []
   },
   {
-    "file": "ogs-92277871.sgf",
-    "black": "TerHuckerby",
-    "white": "GnuGo",
-    "result": "W+R",
-    "rules": "chinese",
-    "scored": false,
+    "file": "pro-minigo-001022.sgf",
+    "black": "Tanimura Yoshiyuki",
+    "white": "Takemiya Masaki",
+    "result": "W+5.5",
+    "event": "Mini-Go",
+    "date": "2000-10-22",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  },
+  {
+    "file": "pro-minigo-001112.sgf",
+    "black": "Takemiya Masaki",
+    "white": "Yuki Satoshi",
+    "result": "B+2.5",
+    "event": "Mini-Go",
+    "date": "2000-11-12",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  },
+  {
+    "file": "pro-minigo-980523.sgf",
+    "black": "Kurahashi Masayuki",
+    "white": "Ishida Yoshio",
+    "result": "W+1.5",
+    "event": "Mini-Go",
+    "date": "1998-05-23",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  },
+  {
+    "file": "pro-minigo-020609.sgf",
+    "black": "Shiraishi Kyoko",
+    "white": "Yuki Satoshi",
+    "result": "W+2.5",
+    "event": "Mini-Go",
+    "date": "2002-06-09",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  },
+  {
+    "file": "pro-nhk-1989-2.sgf",
+    "black": "Ishikura Noboru",
+    "white": "Koyama Shizuo",
+    "result": "B+0.5",
+    "event": "NHK TV 9x9",
+    "date": "1989",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  },
+  {
+    "file": "pro-nhk-newyear2002-3.sgf",
+    "black": "Aoki Kikuyo",
+    "white": "Mannami Kana",
+    "result": "B+1.5",
+    "event": "NHK New Year 2002",
+    "date": "2002-01-02",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  },
+  {
+    "file": "pro-misc-igofestival2008-3.sgf",
+    "black": "Umezawa Yukari",
+    "white": "Osawa Narumi",
+    "result": "B+2.5",
+    "event": "Women's 9x9 Match",
+    "date": "2008-11-03",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  },
+  {
+    "file": "pro-propairgo-pg2004-d-1.sgf",
+    "black": "Yoshida Mika, 8p & Ishida Yoshio, 9p",
+    "white": "Kato Tomoko, 5p & Cho Sonjin, 9p",
+    "result": "W+3.5",
+    "event": "10th Ricoh Pro Pairgo Cup",
+    "date": "2003-12-06",
+    "rules": "japanese",
+    "scored": true,
     "dead": []
   }
 ]
