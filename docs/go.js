@@ -140,6 +140,8 @@ export function parseSGF(text) {
     blackRank: get("BR"),
     whiteRank: get("WR"),
     result: get("RE"),
+    // Player to move first (PL), for setup positions; null when not given.
+    toPlay: get("PL") === "B" ? BLACK : get("PL") === "W" ? WHITE : null,
     setup,
     moves,
   };

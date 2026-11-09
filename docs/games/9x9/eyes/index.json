@@ -1,0 +1,11 @@
+[
+  {
+    "file": "eyes.sgf",
+    "label": "One eye, two eyes",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Left: one eye, so White captures by playing in it. Right: two eyes, so White can never fill both. White to play; ← steps back.",
+    "demo": true
+  }
+]

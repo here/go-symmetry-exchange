@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261107083326";
-import { isActive } from "./slides.js?v=20261107083326";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261109022342";
+import { isActive } from "./slides.js?v=20261109022342";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const VERSION = new URL(import.meta.url).search;
@@ -68,6 +68,7 @@ function createBoard(root, gamesDir, title) {
   function toPlay() {
     if (cur > 0) return other(line[cur - 1].color);
     if (line.length) return line[0].color;
+    if (game.toPlay) return game.toPlay;
     return game.handicap > 1 || game.setup[BLACK].length > 1 ? WHITE : BLACK;
   }
 
@@ -262,7 +263,7 @@ function createBoard(root, gamesDir, title) {
     if (last && last.pt === null) parts.push(`${last.color === BLACK ? "Black" : "White"} passed`);
     if (divergedAt !== null) parts.push(`your line from move ${divergedAt}`);
     if (autoGen) parts.push(cur === line.length ? "autoplay: next game soon" : "autoplay");
-    else if (divergedAt === null && gameList.length) {
+    else if (divergedAt === null && gameList.length > 1 && line.length) {
       if (cur === line.length) parts.push("→ next game");
       else if (cur === 0) parts.push("← previous game");
     }
@@ -328,7 +329,7 @@ function createBoard(root, gamesDir, title) {
     // → at the last move (the scoring screen) goes to the next game;
     // ← at move 0 goes back to the previous game, shown at its last move.
     // Only a fresh key press, on a position that has been showing for a moment.
-    const canSwitch = divergedAt === null && gameList.length && line.length > 0 &&
+    const canSwitch = divergedAt === null && gameList.length > 1 && line.length > 0 &&
       !e.repeat && Date.now() - edgeShownAt > 400;
     if (e.key === "ArrowRight" && canSwitch && cur === line.length) {
       e.preventDefault(); setAutoplay(false); nextGame().catch(showError); return;
@@ -412,9 +413,12 @@ function createBoard(root, gamesDir, title) {
     const meta = gameList.find((m) => m.file === file);
     if (meta) {
       g.meta = meta;
-      g.ending = { rules: meta.rules, scored: !!meta.scored, dead: (meta.dead || []).map((p) => sgfPoint(p, g.size)) };
+      // A demo position (`demo: true`) has no score card and opens on its last move,
+      // so ← steps back through how it was built.
+      if (!meta.demo) g.ending = { rules: meta.rules, scored: !!meta.scored, dead: (meta.dead || []).map((p) => sgfPoint(p, g.size)) };
     }
     loadGame(g);
+    if (meta?.demo) goTo(line.length);
   }
 
   function showError(err) {
@@ -430,7 +434,7 @@ function createBoard(root, gamesDir, title) {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       gameList = await res.json();
       select.innerHTML = `<option value="">Empty board</option>` +
-        gameList.map((g) => `<option value="${escapeHtml(g.file)}">${escapeHtml(g.black)} vs ${escapeHtml(g.white)} (${escapeHtml(g.result)})</option>`).join("");
+        gameList.map((g) => `<option value="${escapeHtml(g.file)}">${escapeHtml(g.label || `${g.black} vs ${g.white} (${g.result})`)}</option>`).join("");
       select.onchange = () => (select.value ? loadFile(select.value) : Promise.resolve(loadGame(blankGame(9)))).catch(showError);
       const wanted = new URLSearchParams(location.search).get("game");
       const first = gameList.some((g) => g.file === wanted) ? wanted : gameList[0]?.file;
