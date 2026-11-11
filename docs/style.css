@@ -58,7 +58,7 @@ body {
 /* slides: one screen each */
 .slide { min-height: 100vh; }
 
-.title-slide, .toc-slide {
+.title-slide, .toc-slide, .proverb-slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,6 +73,15 @@ body {
 .byline { color: var(--muted); margin: 0; }
 
 .toc-slide h2 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 24px; }
+
+/* proverb slide */
+.proverb { font-size: clamp(1.8rem, 5vw, 3.25rem); line-height: 1.15; font-weight: 700; margin: 0 0 16px; }
+.proverb::before { content: "“"; color: var(--accent); }
+.proverb::after { content: "”"; color: var(--accent); }
+.proverb-origin { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 0 28px; }
+.points { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.points li { border-top: 3px solid var(--accent); padding-top: 10px; color: var(--muted); line-height: 1.45; }
+.points strong { display: block; color: var(--fg); font-size: 1.1rem; margin-bottom: 4px; }
 .toc { list-style: none; counter-reset: toc; margin: 0 0 24px; padding: 0; }
 .toc li {
   counter-increment: toc;
