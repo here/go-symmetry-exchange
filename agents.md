@@ -112,6 +112,19 @@ Open question: which two games do you want to use? Send them and I'll add diagra
 
 ## Development notes
 
+### Branches and publishing
+
+`main` is the site: GitHub Pages serves `docs/` from it. Work may happen on a branch in a separate worktree, but finished work always lands on `main` and is pushed:
+
+1. Commit on the branch.
+2. Rebase the branch onto `main` (or merge it), resolving any `?v=` conflicts as described under Cache busting.
+3. Run `tools/bump-version.sh` and commit if `docs/` changed.
+4. Fast-forward `main` to the branch and `git push origin main`.
+
+Don't leave work only on a side branch: it doesn't reach the site.
+
+Put worktrees inside the repo at `.claude/worktrees/<branch>` (ignored in `.gitignore`), not next to it, so they stay inside the working directory.
+
 ### Cache busting
 
 GitHub Pages serves files with `cache-control: max-age=600`, so after a push a browser can show the new `index.html` with a stale `app.js` for up to 10 minutes. New buttons then appear but do nothing.
