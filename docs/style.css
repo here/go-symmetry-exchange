@@ -69,7 +69,6 @@ body {
 
 .kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: .9rem; margin: 0 0 12px; }
 .title { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.05; margin: 0 0 24px; font-weight: 700; }
-.subtitle { font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: var(--muted); max-width: 40ch; margin: 0 0 32px; }
 .byline { color: var(--muted); margin: 0; }
 
 /* slide index: the first slide, one link per slide */
