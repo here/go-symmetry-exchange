@@ -1,0 +1,11 @@
+[
+  {
+    "file": "two-eyes.sgf",
+    "label": "Two eyes",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Two eyes: a white stone in D5 or F5 would have no liberties and capture nothing, so White can't play there. The group can never be captured. White to play; ← steps back.",
+    "demo": true
+  }
+]

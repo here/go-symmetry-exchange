@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261112233309">
+  <link rel="stylesheet" href="style.css?v=20261112233738">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -104,8 +104,10 @@
   <!-- Shapes: one setup position, playable like the other boards. -->
   <main class="slide layout board-slide" id="shapes" data-keys="board" data-games="games/9x9/shapes/" data-title="Shapes"></main>
 
-  <!-- Two eyes: built move by move, opens on the finished position with White to play. -->
-  <main class="slide layout board-slide" id="eyes" data-keys="board" data-games="games/9x9/eyes/" data-title="Two eyes"></main>
+  <!-- One eye, then two eyes: each built move by move, opening on the finished position with White to play. -->
+  <main class="slide layout board-slide" id="one-eye" data-keys="board" data-games="games/9x9/one-eye/" data-title="One eye"></main>
+
+  <main class="slide layout board-slide" id="two-eyes" data-keys="board" data-games="games/9x9/two-eyes/" data-title="Two eyes"></main>
 
   <section class="slide proverb-slide" id="lose-100" data-title="Lose your first 100 games">
     <p class="kicker">Keep learning</p>
@@ -124,6 +126,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261112233309"></script>
+  <script type="module" src="app.js?v=20261112233738"></script>
 </body>
 </html>
