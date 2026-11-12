@@ -15,6 +15,22 @@ let current = 0;
 
 document.body.classList.add("deck");
 
+// Slide index: a numbered link to every slide after the index itself, named by its
+// data-title (falling back to its first heading). Numbers match the slide counter.
+for (const list of document.querySelectorAll('[data-role="slide-index"]')) {
+  const from = slides.indexOf(list.closest(".slide")) + 1;
+  slides.slice(from).forEach((s, k) => {
+    if (!s.id) s.id = `slide-${from + k + 1}`;
+    const li = document.createElement("li");
+    li.value = from + k + 1;
+    const a = document.createElement("a");
+    a.href = `#${s.id}`;
+    a.textContent = s.dataset.title || s.querySelector("h1, h2")?.textContent.trim() || s.id;
+    li.append(a);
+    list.append(li);
+  });
+}
+
 // Controls: prev · counter · next · full screen, plus a progress bar.
 const bar = document.createElement("div");
 bar.className = "deck-progress";

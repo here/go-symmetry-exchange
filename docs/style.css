@@ -72,6 +72,23 @@ body {
 .subtitle { font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: var(--muted); max-width: 40ch; margin: 0 0 32px; }
 .byline { color: var(--muted); margin: 0; }
 
+/* slide index: the first slide, one link per slide */
+.index-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+.index-title { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.05; margin: 0 0 12px; font-weight: 700; }
+.index-slide .byline { margin-bottom: 32px; font-size: 1.15rem; }
+.slide-index { margin: 0; padding: 0 0 0 2.5em; columns: 2 280px; column-gap: 48px; }
+.slide-index li { break-inside: avoid; padding: 8px 0; font-size: 1.2rem; }
+.slide-index li::marker { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+.slide-index a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--border); }
+.slide-index a:hover, .slide-index a:focus-visible { color: var(--accent); border-bottom-color: var(--accent); }
+
 .toc-slide h2 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 24px; }
 
 /* proverb slide */

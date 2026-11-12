@@ -9,11 +9,20 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261112230758">
+  <link rel="stylesheet" href="style.css?v=20261112230830">
 </head>
 <body>
-  <!-- Each .slide is one screen of the talk. -->
-  <header class="slide title-slide" id="title">
+  <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
+       (and, on board slides, the board's accessible name). -->
+
+  <!-- Slide index: slides.js fills the list with a link to every slide after this one, in order. -->
+  <nav class="slide index-slide" id="index" data-title="Slide index" aria-label="Slide index">
+    <h1 class="index-title">Plot, symmetry and exchange</h1>
+    <p class="byline">Mike · Plot</p>
+    <ol class="slide-index" data-role="slide-index"></ol>
+  </nav>
+
+  <header class="slide title-slide" id="title" data-title="Title">
     <p class="kicker">The board game Go</p>
     <h1 class="title">plot, symmetry and exchange</h1>
     <p class="subtitle">A 30-minute introduction: two ideas, three shapes, and groups that live with two eyes.</p>
@@ -74,7 +83,7 @@
     </aside>
   </template>
 
-  <section class="slide toc-slide" id="contents">
+  <section class="slide toc-slide" id="contents" data-title="Contents">
     <h2>Contents</h2>
     <ol class="toc">
       <li><span class="toc-name">How I got here</span><span class="toc-idea">Why a human game still matters after Deep Blue</span><span class="toc-min">3 min</span></li>
@@ -88,7 +97,7 @@
     <p class="hint">Placeholder: each entry will link to its section's slides.</p>
   </section>
 
-  <section class="slide image-slide" id="already-won">
+  <section class="slide image-slide" id="already-won" data-title="I have already won">
     <figure>
       <img src="images/already-won.webp" width="1200" height="1200"
            alt="Four-panel comic. Two characters sit at a board game. One asks, “So what's your primary tactical goal this turn?” The other answers, “To have fun.” “No, I mean, what are your winning conditions?” “Spending time with you.” Last panel: “Do what you must, I have already won.”">
@@ -106,7 +115,7 @@
   <!-- Two eyes: built move by move, opens on the finished position with White to play. -->
   <main class="slide layout board-slide" id="eyes" data-keys="board" data-games="games/9x9/eyes/" data-title="Two eyes"></main>
 
-  <section class="slide proverb-slide" id="lose-100">
+  <section class="slide proverb-slide" id="lose-100" data-title="Lose your first 100 games">
     <p class="kicker">Keep learning</p>
     <blockquote class="proverb">Lose your first 100 games as quickly as possible.</blockquote>
     <p class="proverb-origin">Also told as “your first 50 games”. Nobody has traced where it comes from: it's a rule of thumb passed between amateur players.</p>
@@ -123,6 +132,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261112230758"></script>
+  <script type="module" src="app.js?v=20261112230830"></script>
 </body>
 </html>
