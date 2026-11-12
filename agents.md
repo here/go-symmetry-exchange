@@ -124,6 +124,11 @@ The strategy: every CSS and JS link carries one shared version query, `?v=<versi
 - Keep every `?v=` identical. A module imported under two different URLs runs twice; for `slides.js` that would build the slide controls twice.
 - When adding a new JS module or stylesheet, give its link or import a `?v=` too, so the bump script covers it.
 - Images are not versioned. If you replace an image, give it a new file name.
+- Every branch that runs the bump script changes the same `?v=` lines, so merging two branches conflicts there. Take either side, then run `tools/bump-version.sh` again before pushing.
+
+### Hosting
+
+The site is served from GitHub Pages and may also be proxied from another address (planned: `herebox.org/go/symmetry/`). Keep every path relative, with no leading `/`, and fetch data relative to `app.js` (see `docs/README.md`, "Hosting at another address").
 
 ### Game data and scoring
 

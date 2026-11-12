@@ -1,8 +1,13 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261111061938";
-import { isActive } from "./slides.js?v=20261111061938";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261112230254";
+import { isActive } from "./slides.js?v=20261112230254";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
-const VERSION = new URL(import.meta.url).search;
+const HERE = new URL(import.meta.url);
+const VERSION = HERE.search;
+// Game files are fetched relative to this script, not the page address, so the site
+// works from any host or folder (with or without a trailing slash).
+const SITE = new URL(".", HERE);
+const asset = (path) => new URL(path, SITE).href + VERSION;
 
 const SVG = "http://www.w3.org/2000/svg";
 const COLS = "ABCDEFGHJKLMNOPQRST";
@@ -407,7 +412,7 @@ function createBoard(root, gamesDir, title) {
 
   // ---- game list -------------------------------------------------------
   async function loadFile(file) {
-    const res = await fetch(gamesDir + file + VERSION);
+    const res = await fetch(asset(gamesDir + file));
     if (!res.ok) throw new Error(`${file}: HTTP ${res.status}`);
     const g = parseSGF(await res.text());
     const meta = gameList.find((m) => m.file === file);
@@ -430,7 +435,7 @@ function createBoard(root, gamesDir, title) {
     const select = $("game-select");
     loadGame(blankGame(9));
     try {
-      const res = await fetch(gamesDir + "index.json" + VERSION);
+      const res = await fetch(asset(gamesDir + "index.json"));
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       gameList = await res.json();
       select.innerHTML = `<option value="">Empty board</option>` +

@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Plot, Symmetry and Exchange</title>
-  <link rel="stylesheet" href="style.css?v=20261111061938">
+  <!-- Every link on this page is relative, so it can be hosted at any address. If it's opened
+       as a folder without the trailing slash (example.com/talk), add the slash so relative links resolve. -->
+  <script>
+    if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
+  </script>
+  <link rel="stylesheet" href="style.css?v=20261112230254">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. -->
@@ -115,6 +120,6 @@
   </section>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261111061938"></script>
+  <script type="module" src="app.js?v=20261112230254"></script>
 </body>
 </html>

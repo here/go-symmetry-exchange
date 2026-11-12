@@ -48,3 +48,13 @@ On a board slide (each board has its own game list, controls and autoplay):
 This folder is the site. In the repo's **Settings → Pages**, set **Source** to “Deploy from a branch”, branch `main`, folder `/docs`.
 The site will be at `https://<user>.github.io/<repo>/`. All paths in the page are relative, so it works under that sub-path.
 `.nojekyll` tells Pages to serve the files as they are, without running Jekyll.
+
+## Hosting at another address
+
+The site works from any host or folder, for example behind a Cloudflare Worker that proxies `herebox.org/go/symmetry/` to GitHub Pages.
+
+- Every link in `index.html` is relative (`style.css`, `app.js`, `images/…`), and links to other sites are full URLs, so the HTML needs no rewriting.
+- `app.js` fetches the game files relative to its own address, not the page's.
+- The page needs a trailing slash when it's opened as a folder (`/go/symmetry/`, not `/go/symmetry`). A proxy should redirect to add it. As a fallback, a small script at the top of `index.html` adds it in the browser.
+- Keep new paths relative: no leading `/`.
+
