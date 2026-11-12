@@ -1,6 +1,6 @@
 # Web board
 
-A static page with slides and playable 9x9 boards: online games from OGS (`games/9x9/ogs/`), professional games (`games/9x9/pro/`), a shapes position (`games/9x9/shapes/`), one-eye and two-eyes demos (`games/9x9/one-eye/`, `games/9x9/two-eyes/`) and a blank demo board (`games/9x9/blank/`).
+A static page with slides and playable 9x9 boards: online games from OGS (`games/9x9/ogs/`), professional games (`games/9x9/pro/`), a shapes position (`games/9x9/shapes/`), one-eye and two-eyes demos (`games/9x9/one-eye/`, `games/9x9/two-eyes/`) and a blank demo board (`games/9x9/blank/`), plus one 19x19 board for mirror go (`games/19x19/mirror/`).
 It has no build step and no dependencies.
 
 ## Run
@@ -41,7 +41,7 @@ On a board slide (each board has its own game list, controls and autoplay):
 - `slides.js`: slide show navigation and full screen.
 - `app.js`: the board component (`createBoard`): rendering, controls, autoplay and game loading. Every `.board-slide` in `index.html` gets one, built from `#board-template`; its `data-games` names the game folder.
 - `go.js`: Go rules and the SGF parser (main line only).
-- `games/9x9/ogs/`, `games/9x9/pro/`, `games/9x9/shapes/`, `games/9x9/one-eye/`, `games/9x9/two-eyes/`, `games/9x9/blank/`: SGF files plus an `index.json` per folder, listing the games in menu order with an optional menu `label`, `rules`, `scored`, `dead` (points marked dead at the end, in SGF coordinates; a stone there is dead, an empty point is neutral) and optional `about`, `scoreMethod`, `scoreNote` and `demo` (opens on the last move, no score card). Each folder's README says where its games come from.
+- `games/9x9/ogs/`, `games/9x9/pro/`, `games/9x9/shapes/`, `games/9x9/one-eye/`, `games/9x9/two-eyes/`, `games/9x9/blank/`, `games/19x19/mirror/`: SGF files plus an `index.json` per folder, listing the games in menu order with an optional menu `label`, `rules`, `scored`, `dead` (points marked dead at the end, in SGF coordinates; a stone there is dead, an empty point is neutral) and optional `about`, `scoreMethod`, `scoreNote` `demo` (opens on the last move, no score card) and `mirror` (rings the mirror point while one player copies the other through the centre). A board slide's `data-size` sets the size of its "Empty board" (default 9). Each folder's README says where its games come from.
 - `../tools/score-games.mjs`: works out dead stones for game records that don't include them, checked against the recorded result. See `games/9x9/pro/README.md`.
 
 ## GitHub Pages

@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261112234122";
-import { isActive } from "./slides.js?v=20261112234122";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261112235239";
+import { isActive } from "./slides.js?v=20261112235239";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const HERE = new URL(import.meta.url);
@@ -42,6 +42,8 @@ function createBoard(root, gamesDir, title) {
   const $ = (role) => root.querySelector(`[data-role="${role}"]`);
   const svg = $("board");
   svg.setAttribute("aria-label", `${title || "Go"} board`);
+  // Board size for "Empty board" (data-size on the slide, default 9).
+  const size = parseInt(root.dataset.size, 10) || 9;
 
   // ---- state -----------------------------------------------------------
   let game = null;        // parsed SGF (or an empty game)
@@ -84,8 +86,24 @@ function createBoard(root, gamesDir, title) {
     return score(states[cur], { dead: e.dead, komi: game.komi, rules: e.rules, handicap: game.handicap });
   }
 
+  // Mirror go (`"mirror": true` in index.json): the first move number at which a
+  // reply no longer copies the move before it through the centre point. Moves
+  // before it are the mirror phase. null when the game isn't marked as mirror go.
+  let mirrorBreak = null;
+  const mirrorOf = (pt) => game.size * game.size - 1 - pt;
+  function findMirrorBreak(g) {
+    if (!g.meta?.mirror) return null;
+    const m = g.moves, last = g.size * g.size - 1;
+    // Move 1 may be on the centre point; from move 3 on, each odd move copies the one before.
+    for (let i = 2; i < m.length; i += 2) {
+      if (m[i].pt === null || m[i - 1].pt === null || m[i].pt !== last - m[i - 1].pt) return i + 1;
+    }
+    return m.length + 1;
+  }
+
   function loadGame(g) {
     game = g;
+    mirrorBreak = findMirrorBreak(g);
     line = g.moves.slice();
     divergedAt = null;
     rebuild();
@@ -178,6 +196,7 @@ function createBoard(root, gamesDir, title) {
     if (!sc && last && last.pt !== null) {
       svgEl("circle", { class: `last ${last.color === BLACK ? "on-b" : "on-w"}`, cx: last.pt % n, cy: Math.floor(last.pt / n), r: .22 }, stonesLayer);
     }
+    if (!sc) drawMirrorMark();
 
     // Name plus rank where the record has one (BR/WR), e.g. "Cho Chikun 9p".
     const who = (name, rank) => [name, rank].filter(Boolean).join(" ") || "–";
@@ -261,12 +280,26 @@ function createBoard(root, gamesDir, title) {
       </table>`;
   }
 
+  // While the mirror holds, ring the point opposite the last move (where Black
+  // copies next, or the White stone Black just copied). On the move that breaks
+  // the mirror, a dashed ring marks the point Black didn't play.
+  function drawMirrorMark() {
+    if (!mirrorBreak || divergedAt !== null || cur < 2 || cur > mirrorBreak) return;
+    const n = game.size, broke = cur === mirrorBreak;
+    const from = broke ? line[cur - 2] : line[cur - 1];
+    if (!from || from.pt === null) return;
+    const pt = mirrorOf(from.pt);
+    svgEl("circle", { class: `mirror-mark${broke ? " broken" : ""}`, cx: pt % n, cy: Math.floor(pt / n), r: .42 }, stonesLayer);
+  }
+
   function setStatus(extra = "") {
     const who = toPlay() === BLACK ? "Black" : "White";
     const last = line[cur - 1];
     const parts = [`Move ${cur} of ${line.length}`];
     if (last && last.pt === null) parts.push(`${last.color === BLACK ? "Black" : "White"} passed`);
     if (divergedAt !== null) parts.push(`your line from move ${divergedAt}`);
+    else if (mirrorBreak && cur >= 2 && cur < mirrorBreak) parts.push("mirror: Black copies White through the centre");
+    else if (mirrorBreak && cur === mirrorBreak) parts.push(`Black breaks the mirror after ${Math.floor((mirrorBreak - 2) / 2)} copies`);
     if (autoGen) parts.push(cur === line.length ? "autoplay: next game soon" : "autoplay");
     else if (divergedAt === null && gameList.length > 1 && line.length) {
       if (cur === line.length) parts.push("→ next game");
@@ -325,7 +358,7 @@ function createBoard(root, gamesDir, title) {
   $("autoplay").onclick = () => setAutoplay(!autoGen);
   $("speed").onchange = () => { if (autoGen) setAutoplay(true); };
   $("show-score").onchange = (e) => { showScore = e.target.checked; render(); };
-  $("clear").onclick = () => { setAutoplay(false); $("game-select").value = ""; loadGame(blankGame(9)); };
+  $("clear").onclick = () => { setAutoplay(false); $("game-select").value = ""; loadGame(blankGame(size)); };
 
   document.addEventListener("keydown", (e) => {
     if (e.target.closest?.("select, input") || !isActive(root)) return;
@@ -433,14 +466,14 @@ function createBoard(root, gamesDir, title) {
 
   async function init() {
     const select = $("game-select");
-    loadGame(blankGame(9));
+    loadGame(blankGame(size));
     try {
       const res = await fetch(asset(gamesDir + "index.json"));
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       gameList = await res.json();
       select.innerHTML = `<option value="">Empty board</option>` +
         gameList.map((g) => `<option value="${escapeHtml(g.file)}">${escapeHtml(g.label || `${g.black} vs ${g.white} (${g.result})`)}</option>`).join("");
-      select.onchange = () => (select.value ? loadFile(select.value) : Promise.resolve(loadGame(blankGame(9)))).catch(showError);
+      select.onchange = () => (select.value ? loadFile(select.value) : Promise.resolve(loadGame(blankGame(size)))).catch(showError);
       const wanted = new URLSearchParams(location.search).get("game");
       const first = gameList.some((g) => g.file === wanted) ? wanted : gameList[0]?.file;
       if (first) { select.value = first; await loadFile(first); }

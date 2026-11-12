@@ -122,6 +122,10 @@ body {
 
 .board-wrap { display: flex; justify-content: center; }
 
+/* Mirror go marks (19x19 mirror slide) */
+.mirror-mark { fill: none; stroke: var(--accent); stroke-width: .09; pointer-events: none; }
+.mirror-mark.broken { stroke-dasharray: .16 .1; }
+
 .board {
   width: min(100%, calc(100vh - 48px));
   aspect-ratio: 1;

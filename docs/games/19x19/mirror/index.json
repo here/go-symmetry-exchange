@@ -1,0 +1,27 @@
+[
+  {
+    "file": "go-seigen-kitani-1929.sgf",
+    "black": "Go Seigen",
+    "white": "Kitani Minoru",
+    "result": "W+3",
+    "event": "",
+    "date": "1929-06-03",
+    "rules": "japanese",
+    "scored": true,
+    "dead": [
+      "gb",
+      "kg",
+      "lg",
+      "lh",
+      "sg",
+      "oh",
+      "fi",
+      "gj",
+      "oq"
+    ],
+    "scoreMethod": "ownership+result",
+    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: White 1-stone group at P12 (69% alive) treated as dead.",
+    "about": "Mirror go: Go Seigen (Black) opens on tengen and copies White's moves through the centre for 31 moves, then breaks the mirror at move 65. Kitani wins by 3.",
+    "mirror": true
+  }
+]

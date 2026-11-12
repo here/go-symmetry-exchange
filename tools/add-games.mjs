@@ -12,11 +12,12 @@
 //                      pro-minigo-931106.sgf) instead of just its file name
 //   --prefix <text>    file name prefix (default "pro-")
 //   --rules <rules>    japanese (default) or chinese
+//   --size <n>         board size to accept (default 9), e.g. 19 for docs/games/19x19/...
 //   --about <text>     a one-line note shown under the game menu (only with one file);
 //                      without it, add an `about` to the new entry in index.json by hand
 //
 // A game is skipped, with the reason printed, when:
-//   - it isn't 9x9, or is already in the folder
+//   - it isn't the expected board size (--size, default 9), or is already in the folder
 //   - its result isn't a count (resignation, time loss, no result)
 //   - its count can't be made to match the recorded result (see score-games.mjs)
 
@@ -26,9 +27,9 @@ import { analyse } from "./score-games.mjs";
 
 const args = process.argv.slice(2);
 const dir = args.shift();
-if (!dir) { console.error("usage: node tools/add-games.mjs <games-dir> [--root dir] [--prefix p] [--rules r] [--about text] <file.sgf ...> | --readme"); process.exit(1); }
+if (!dir) { console.error("usage: node tools/add-games.mjs <games-dir> [--root dir] [--prefix p] [--rules r] [--size n] [--about text] <file.sgf ...> | --readme"); process.exit(1); }
 
-const opt = { prefix: "pro-", rules: "japanese", root: null, about: null, readme: false };
+const opt = { prefix: "pro-", rules: "japanese", root: null, about: null, readme: false, size: "9" };
 const files = [];
 while (args.length) {
   const a = args.shift();
@@ -48,7 +49,7 @@ for (const f of files) {
   const name = opt.prefix + rel.replace(/\.sgf$/i, "").replace(/[\/\\_\s]+/g, "-").toLowerCase() + ".sgf";
   const skip = (why) => console.log(`skip ${rel}: ${why}`);
 
-  if (prop(text, "SZ") !== "9") { skip("not 9x9"); continue; }
+  if (prop(text, "SZ") !== String(opt.size)) { skip(`not ${opt.size}x${opt.size}`); continue; }
   if (idx.some((m) => m.file === name) || existsSync(join(dir, name))) { skip(`already in folder as ${name}`); continue; }
   const re = prop(text, "RE");
   if (!/^[BW]\+\d/.test(re)) { skip(`result ${re || "(none)"} is not a count`); continue; }
