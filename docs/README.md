@@ -52,7 +52,7 @@ The site will be at `https://<user>.github.io/<repo>/`. All paths in the page ar
 
 ## Hosting at another address
 
-The site works from any host or folder, for example behind a Cloudflare Worker that proxies `herebox.org/go/symmetry/` to GitHub Pages.
+The site works from any host or folder. It's served at https://herebox.org/go/symmetry/ by a Cloudflare Worker that proxies to GitHub Pages, caching HTML for 60 seconds and `?v=` assets for a long time. Don't set a custom domain in the GitHub Pages settings.
 
 - Every link in `index.html` is relative (`style.css`, `app.js`, `images/…`), and links to other sites are full URLs, so the HTML needs no rewriting.
 - `app.js` fetches the game files relative to its own address, not the page's.

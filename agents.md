@@ -141,7 +141,11 @@ The strategy: every CSS and JS link carries one shared version query, `?v=<versi
 
 ### Hosting
 
-The site is served from GitHub Pages and may also be proxied from another address (planned: `herebox.org/go/symmetry/`). Keep every path relative, with no leading `/`, and fetch data relative to `app.js` (see `docs/README.md`, "Hosting at another address").
+The site is served from GitHub Pages (https://here.github.io/go-symmetry-exchange/) and also at https://herebox.org/go/symmetry/, through a Cloudflare Worker that proxies to GitHub Pages.
+
+- Keep every path relative, with no leading `/`, and fetch data relative to `app.js` (see `docs/README.md`, "Hosting at another address").
+- Don't set a custom domain in the GitHub Pages settings; the proxy depends on the github.io address.
+- The proxy caches HTML for 60 seconds and `?v=` assets for a long time, which is one more reason to run `tools/bump-version.sh` before each push. Images aren't versioned, so a replaced image needs a new file name.
 
 ### Game data and scoring
 

@@ -3,7 +3,7 @@
 Slides and an interactive demo for a 30-minute talk on the board game Go.
 The talk outline is in `agents.md`.
 
-- Site: https://here.github.io/go-symmetry-exchange/
+- Site: https://herebox.org/go/symmetry/ (proxied from https://here.github.io/go-symmetry-exchange/)
 - Source for the site: `docs/` (published by GitHub Pages from `main` / `docs`). See `docs/README.md` to run it locally.
 
 ## Go board
