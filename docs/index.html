@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261112230254">
+  <link rel="stylesheet" href="style.css?v=20261112230758">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. -->
@@ -119,7 +119,10 @@
     <p class="hint">More: <a href="https://senseis.xmp.net/?topic=1111" target="_blank" rel="noopener">Sensei's Library discussion</a> · <a href="https://en.wikipedia.org/wiki/Go_proverb" target="_blank" rel="noopener">Go proverbs (Wikipedia)</a></p>
   </section>
 
+  <!-- Demo board: an empty 9x9 to play on from scratch. -->
+  <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
+
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261112230254"></script>
+  <script type="module" src="app.js?v=20261112230758"></script>
 </body>
 </html>

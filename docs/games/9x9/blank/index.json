@@ -1,0 +1,12 @@
+[
+  {
+    "file": "blank.sgf",
+    "label": "Blank board",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "An empty 9x9 board to play on. Click a point to place a stone; Black moves first. ← steps back, Empty board starts again.",
+    "scored": false,
+    "dead": []
+  }
+]
