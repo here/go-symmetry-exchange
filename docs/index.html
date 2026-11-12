@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261112230952">
+  <link rel="stylesheet" href="style.css?v=20261112231032">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -26,7 +26,7 @@
     <p class="kicker">The board game Go</p>
     <h1 class="title">Plot 田, Symmetry and Exchange</h1>
     <p class="subtitle">A 30-minute introduction: two ideas, three shapes, and groups that live with two eyes.</p>
-    <p class="byline">Placeholder · speaker · date</p>
+    <p class="byline"><a href="https://herebox.org/" target="_blank" rel="noopener">Mike Waggoner</a> · <time datetime="2026-11-12">November 12, 2026</time></p>
   </header>
 
   <!-- Board slides: each one gets a copy of #board-template, filled by app.js. data-title is only used as the board's accessible name.
@@ -132,6 +132,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261112230952"></script>
+  <script type="module" src="app.js?v=20261112231032"></script>
 </body>
 </html>
