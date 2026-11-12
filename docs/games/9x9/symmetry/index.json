@@ -1,0 +1,29 @@
+[
+  {
+    "file": "edge-jump.sgf",
+    "label": "Five-space jump on the edge",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Black's two stones on the third line, B3 and H3, have five empty points between them. The middle one, E3, is the point of symmetry: White splits them there. ← shows the position before.",
+    "demo": true
+  },
+  {
+    "file": "knights-move.sgf",
+    "label": "Between a knight's move",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Black's knight's move, C6 and D4. The two points between them, C5 and D5, are mirror images around its centre. White plays between at D5. ← shows the position before.",
+    "demo": true
+  },
+  {
+    "file": "centre.sgf",
+    "label": "The centre of the board",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "E5 is the centre of the 9x9 board, the point of symmetry for the whole board. Black takes it, then answers each White move with its mirror image through E5 (mirror go). ← steps back.",
+    "demo": true
+  }
+]
