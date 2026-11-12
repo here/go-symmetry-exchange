@@ -24,7 +24,7 @@ The page is a slide show: one section (`.slide`) fills the screen at a time.
 - **Full screen:** F, or the ⛶ button. Esc leaves.
 - **Jump to a slide:** the address tracks the slide (`#/2`), so reloads and links keep your place. Slide ids work too: `#ogs`, `#pro`.
 - **Touch:** swipe left or right outside the board.
-- **Slide index:** the first slide links to every other slide by name. Click one to jump there; Home (on slides without a board) comes back.
+- **Slide index:** the first slide lists every slide by number and name, starting with itself (1. Index). Click one to jump there; Home (on slides without a board) comes back.
 - **New slides:** add an element with class `slide` to `index.html`. Give it `data-keys="board"` if its arrow keys should drive a board instead of the slides. Give it an `id` and a `data-title`: the slide index lists it under that name, in page order.
 
 On a board slide (each board has its own game list, controls and autoplay):

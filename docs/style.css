@@ -38,6 +38,11 @@
 
 * { box-sizing: border-box; }
 
+/* Links: the accent colour, underlined on hover or keyboard focus. */
+a { color: var(--accent); text-decoration: none; text-underline-offset: .18em; text-decoration-thickness: .08em; }
+a:hover, a:focus-visible { text-decoration: underline; }
+a:active { opacity: .75; }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -58,7 +63,7 @@ body {
 /* slides: one screen each */
 .slide { min-height: 100vh; }
 
-.title-slide, .toc-slide, .proverb-slide {
+.toc-slide, .proverb-slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +73,6 @@ body {
 }
 
 .kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: .9rem; margin: 0 0 12px; }
-.title { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.05; margin: 0 0 24px; font-weight: 700; }
 .byline { color: var(--muted); margin: 0; }
 
 /* slide index: the first slide, one link per slide */
@@ -85,8 +89,6 @@ body {
 .slide-index { margin: 0; padding: 0 0 0 2.5em; columns: 2 280px; column-gap: 48px; }
 .slide-index li { break-inside: avoid; padding: 8px 0; font-size: 1.2rem; }
 .slide-index li::marker { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
-.slide-index a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--border); }
-.slide-index a:hover, .slide-index a:focus-visible { color: var(--accent); border-bottom-color: var(--accent); }
 
 .toc-slide h2 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 24px; }
 

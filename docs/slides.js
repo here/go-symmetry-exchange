@@ -15,10 +15,10 @@ let current = 0;
 
 document.body.classList.add("deck");
 
-// Slide index: a numbered link to every slide after the index itself, named by its
-// data-title (falling back to its first heading). Numbers match the slide counter.
+// Slide index: a numbered link to every slide from the index itself onward, named by
+// its data-title (falling back to its first heading). Numbers match the slide counter.
 for (const list of document.querySelectorAll('[data-role="slide-index"]')) {
-  const from = slides.indexOf(list.closest(".slide")) + 1;
+  const from = slides.indexOf(list.closest(".slide"));
   slides.slice(from).forEach((s, k) => {
     if (!s.id) s.id = `slide-${from + k + 1}`;
     const li = document.createElement("li");
