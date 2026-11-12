@@ -12,7 +12,8 @@
 //                      pro-minigo-931106.sgf) instead of just its file name
 //   --prefix <text>    file name prefix (default "pro-")
 //   --rules <rules>    japanese (default) or chinese
-//   --about <text>     a one-line note shown under the game menu (only with one file)
+//   --about <text>     a one-line note shown under the game menu (only with one file);
+//                      without it, add an `about` to the new entry in index.json by hand
 //
 // A game is skipped, with the reason printed, when:
 //   - it isn't 9x9, or is already in the folder
@@ -72,7 +73,7 @@ writeReadme(dir, idx);
 if (!opt.readme) console.log(`${added} added, ${idx.length} games in ${idxPath}`);
 
 // Rebuilds the tables between <!-- games:start --> and <!-- games:end --> in the
-// folder's README. Games with an `about` note are listed first, as in the menu.
+// folder's README, in menu order (the order of index.json), with each game's `about` note.
 function writeReadme(dir, idx) {
   const p = join(dir, "README.md");
   if (!existsSync(p)) return;
@@ -82,17 +83,16 @@ function writeReadme(dir, idx) {
 
   const how = (m) => ({ "ownership": m.dead?.length ? "playouts" : "as played", "ownership+result": "playouts, fitted",
     "ownership+neutral": "playouts + neutral point" })[m.scoreMethod] || (m.dead?.length ? "marked by players" : "as played");
+  const cell = (t) => String(t || "").replace(/\|/g, "\\|");
   const row = (m) => {
     const t = readFileSync(join(dir, m.file), "latin1");
     const rank = (k) => (prop(t, k) ? ` ${prop(t, k)}` : "");
     const moves = (t.match(/;[BW]\[/g) || []).length;
-    return `| ${m.file} | ${m.black}${rank("BR")} | ${m.white}${rank("WR")} | ${m.date || prop(t, "DT")} | ${prop(t, "KM") || "–"} | ${m.result} | ${moves} | ${how(m)} |`;
+    return `| ${m.file} | ${cell(m.black)}${rank("BR")} | ${cell(m.white)}${rank("WR")} | ${m.date || prop(t, "DT")} | ${prop(t, "KM") || "–"} | ${m.result} | ${moves} | ${how(m)} | ${cell(m.about)} |`;
   };
-  const head = "| File | Black | White | Date | Komi | Result | Moves | Scoring |\n| --- | --- | --- | --- | --- | --- | --- | --- |";
-  const noted = idx.filter((m) => m.about), rest = idx.filter((m) => !m.about);
+  const head = "| File | Black | White | Date | Komi | Result | Moves | Scoring | Note |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |";
   let out = `<!-- games:start -->\n<!-- Built by tools/add-games.mjs from index.json; edit index.json, then run: node tools/add-games.mjs ${dir} --readme -->\n\n`;
-  if (noted.length) out += `### With notes (listed first in the menu)\n\n${noted.map((m) => `- **${m.file}**: ${m.about}`).join("\n")}\n\n${head}\n${noted.map(row).join("\n")}\n\n`;
-  out += `### ${noted.length ? "More games" : "Games"} (${rest.length})\n\n${head}\n${rest.map(row).join("\n")}\n`;
+  out += `### Games (${idx.length}, in menu order)\n\n${head}\n${idx.map(row).join("\n")}\n`;
   writeFileSync(p, s.slice(0, a) + out + s.slice(b));
   console.log(`${p}: tables rebuilt (${idx.length} games)`);
 }

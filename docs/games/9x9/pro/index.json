@@ -194,7 +194,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Black opens on the centre point (tengen). 72 moves and 16 stones captured; Cho Chikun wins as White by 3.5."
   },
   {
     "file": "pro-minigo-931030.sgf",
@@ -207,7 +208,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Cho Chikun again, against another tengen opening. Only 3 stones captured, and White wins by half a point."
   },
   {
     "file": "pro-minigo-950909.sgf",
@@ -220,7 +222,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Black takes four stones with the very last move (63) and beats Ma Xiaochun 9p by 4.5."
   },
   {
     "file": "pro-minigo-001022.sgf",
@@ -233,7 +236,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Takemiya Masaki as White, with 6.5 komi. A quiet game: 2 captures each, and W+5.5."
   },
   {
     "file": "pro-minigo-001112.sgf",
@@ -246,7 +250,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Takemiya Masaki now as Black, against Yuki Satoshi. Five captures in all, and Black wins by 2.5."
   },
   {
     "file": "pro-minigo-980523.sgf",
@@ -264,7 +269,8 @@
       "hb"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Not a single stone captured in 52 moves. Two stones of each colour are left dead on the board at the end."
   },
   {
     "file": "pro-minigo-020609.sgf",
@@ -277,7 +283,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Only 29 moves and no captures: the borders are settled early. Yuki Satoshi wins as White by 2.5."
   },
   {
     "file": "pro-nhk-1989-2.sgf",
@@ -290,7 +297,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "A TV game from NHK. Black opens on tengen and wins by half a point with 5.5 komi."
   },
   {
     "file": "pro-nhk-newyear2002-3.sgf",
@@ -303,7 +311,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "An NHK New Year game between two women professionals. Black wins by 1.5."
   },
   {
     "file": "pro-misc-igofestival2008-3.sgf",
@@ -316,7 +325,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Umezawa Yukari, holding the Female Kisei title, opens on tengen. Black captures 6 stones to White's 1."
   },
   {
     "file": "pro-propairgo-pg2004-d-1.sgf",
@@ -329,7 +339,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Pair go: four players, alternating within each team. White's pair wins by 3.5 in 48 moves."
   },
   {
     "file": "pro-minigo-011202.sgf",
@@ -344,7 +355,8 @@
       "gg"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Cho Hunhyun as White wins by half a point. The pair play again two weeks later (next game)."
   },
   {
     "file": "pro-minigo-011216.sgf",
@@ -368,7 +380,8 @@
       "dh"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "The rematch: no captures at all, but 8 white stones are dead at the end, and Black wins by 3.5."
   },
   {
     "file": "pro-minigo-940115.sgf",
@@ -385,7 +398,8 @@
       "gg"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "A short game, 38 moves. Cho Chikun loses 3 stones but still wins by half a point."
   },
   {
     "file": "pro-minigo-950819.sgf",
@@ -400,7 +414,8 @@
       "hf"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Ma Xiaochun 9p against Tsukuda Akiko 1p. A capturing game (12 stones), and Black wins by 1.5."
   },
   {
     "file": "pro-minigo-950826.sgf",
@@ -415,7 +430,8 @@
       "ci"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Ma Xiaochun as White wins by 10.5, one of the three biggest margins here."
   },
   {
     "file": "pro-minigo-980425.sgf",
@@ -430,7 +446,8 @@
       "gd"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Ishida Yoshio as White. One capture each, and the count shows W+4.5."
   },
   {
     "file": "pro-minigo-981010.sgf",
@@ -447,7 +464,8 @@
       "bi"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "One of four games between Yamada Kimio and Kudo Norio in late 1998 (the mirror game is another). 17 stones captured."
   },
   {
     "file": "pro-minigo-981205.sgf",
@@ -460,7 +478,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Yamada and Kudo again: a 40-move game decided by half a point."
   },
   {
     "file": "pro-minigo-001210.sgf",
@@ -478,7 +497,8 @@
       "he"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "No captures, but 4 white stones are dead at the end. Takemiya Masaki wins as Black by 4.5."
   },
   {
     "file": "pro-minigo-001224.sgf",
@@ -491,7 +511,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Two weeks later, the same players: one capture in 50 moves, and this time White wins by 6.5."
   },
   {
     "file": "pro-misc-iyama-6crown-1.sgf",
@@ -508,7 +529,8 @@
       "gh"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Iyama Yuta as White at his six-crown celebration (2013). Three black stones are dead at the end; W+1.5."
   },
   {
     "file": "pro-propairgo-pg2004-d-4.sgf",
@@ -523,7 +545,8 @@
       "hc"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Pair go with Otake Hideo on the White team. Black captures 4 stones but loses by half a point."
   },
   {
     "file": "pro-propairgo-pg2009-d-1.sgf",
@@ -538,7 +561,8 @@
       "ah"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Pair go, 72 moves and 13 stones captured. Black's pair wins by half a point."
   },
   {
     "file": "pro-misc-igofestival2008-p3.sgf",
@@ -551,7 +575,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "A women's 9x9 match. 68 moves, 13 stones captured, and White wins by half a point."
   },
   {
     "file": "pro-minigo-020519.sgf",
@@ -566,7 +591,8 @@
       "gc"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "A long, open fight: 68 moves and 12 captures. Yuki Satoshi wins as Black by 2.5."
   },
   {
     "file": "pro-minigo-980829.sgf",
@@ -582,7 +608,8 @@
       "gb"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "White takes 5 stones with the very last move (67) and wins by 3.5."
   },
   {
     "file": "pro-minigo-931204.sgf",
@@ -600,7 +627,8 @@
       "aa"
     ],
     "scoreMethod": "ownership+neutral",
-    "scoreNote": "Monte Carlo ownership; 1 territory point (A9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be."
+    "scoreNote": "Monte Carlo ownership; 1 territory point (A9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be.",
+    "about": "Cho Chikun, then Honinbo, as Black. The A9 corner point is left open, so it counts as neutral."
   },
   {
     "file": "pro-minigo-990529.sgf",
@@ -620,7 +648,8 @@
       "bc"
     ],
     "scoreMethod": "ownership+result",
-    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 5-stone group at E9 (70% alive); White 1-stone group at B7 (76% alive) treated as dead/dead."
+    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 5-stone group at E9 (70% alive); White 1-stone group at B7 (76% alive) treated as dead/dead.",
+    "about": "Cho U as Black. To match the recorded W+2.5, a 5-stone black group at the top edge has to count as dead."
   },
   {
     "file": "pro-minigo-001203.sgf",
@@ -636,7 +665,8 @@
       "di"
     ],
     "scoreMethod": "ownership+result",
-    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 1-stone group at D1 (69% alive) treated as dead."
+    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 1-stone group at D1 (69% alive) treated as dead.",
+    "about": "84 moves, the second-longest game here, with 17 stones captured. Black wins by half a point."
   },
   {
     "file": "pro-minigo-981024.sgf",
@@ -651,7 +681,8 @@
       "aa"
     ],
     "scoreMethod": "ownership+neutral",
-    "scoreNote": "Monte Carlo ownership; 1 territory point (A9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be."
+    "scoreNote": "Monte Carlo ownership; 1 territory point (A9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be.",
+    "about": "Yamada Kimio (Oza) vs Kudo Norio (Tengen), title holders. The A9 corner point counts as neutral; B+0.5."
   },
   {
     "file": "pro-minigo-890826.sgf",
@@ -673,7 +704,8 @@
       "bh"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "83 moves and 23 stones captured, second only to the 89-move exchange game. Black wins by half a point."
   },
   {
     "file": "pro-minigo-881105.sgf",
@@ -686,7 +718,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Black opens on tengen and captures 8 stones in one move near the end (65). B+3.5."
   },
   {
     "file": "pro-minigo-890408.sgf",
@@ -701,7 +734,8 @@
       "be"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "An even trade: Black captures 10, White 8, and White wins by 1.5."
   },
   {
     "file": "pro-minigo-900505.sgf",
@@ -714,7 +748,8 @@
     "scored": true,
     "dead": [],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Only 29 moves, with a single capture: a short game that still goes to a count. W+1.5."
   },
   {
     "file": "pro-minigo-890415.sgf",
@@ -730,7 +765,8 @@
       "gd"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "35 moves, no captures, and one dead stone of each colour. Black wins by half a point."
   },
   {
     "file": "pro-minigo-881231.sgf",
@@ -747,7 +783,8 @@
       "cg"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "Black wins by 12.5, the biggest margin of the counted games here."
   },
   {
     "file": "pro-nhk-newyear2009-1.sgf",
@@ -762,7 +799,8 @@
       "dc"
     ],
     "scoreMethod": "ownership",
-    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result."
+    "scoreNote": "Dead stones from Monte Carlo ownership; count matches the recorded result.",
+    "about": "An NHK New Year game (2009). Black opens on tengen, loses 3 stones, and loses by half a point."
   },
   {
     "file": "pro-minigo-960921.sgf",
@@ -779,7 +817,8 @@
       "hg"
     ],
     "scoreMethod": "ownership+result",
-    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 1-stone group at H3 (58% alive); White 2-stone group at E9 (78% alive) treated as dead/dead."
+    "scoreNote": "Monte Carlo ownership, adjusted to match the recorded result: Black 1-stone group at H3 (58% alive); White 2-stone group at E9 (78% alive) treated as dead/dead.",
+    "about": "77 moves, 10 captures each. To match W+0.5, two small groups the computer was unsure of count as dead."
   },
   {
     "file": "pro-minigo-971108.sgf",
@@ -796,6 +835,7 @@
       "ba"
     ],
     "scoreMethod": "ownership+neutral",
-    "scoreNote": "Monte Carlo ownership; 2 territory points (A9, B9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be."
+    "scoreNote": "Monte Carlo ownership; 2 territory points (A9, B9) counted as neutral to match the recorded result, as an unplayed protective move or neutral point would be.",
+    "about": "Only 31 moves. Two points in the top-left corner (A9, B9) are left open and count as neutral; W+0.5."
   }
 ]

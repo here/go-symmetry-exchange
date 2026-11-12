@@ -9,76 +9,60 @@ Only games that end in a count are included: no resignations and no time losses.
 <!-- games:start -->
 <!-- Built by tools/add-games.mjs from index.json; edit index.json, then run: node tools/add-games.mjs docs/games/9x9/pro --readme -->
 
-### With notes (listed first in the menu)
+### Games (50, in menu order)
 
-- **pro-minigo-981031.sgf**: Mirror go: White copies Black's moves through the centre point for 13 moves in a row.
-- **pro-go-seigen-1968-08-00.sgf**: Go Seigen plays 9x9 with no komi. A long game (80 moves) with captures on both sides.
-- **pro-go-seigen-1968-09-00a.sgf**: Go Seigen as Black, no komi. The record stops with borders still open, so the score is reconstructed.
-- **pro-computer-ji1.sgf**: The program Fuego, as White, beats Zhou Junxun 9p in an even 9x9 game (2009).
-- **pro-computer-oz2.sgf**: The program Zen, as White, beats Ohashi Hirofumi 5p by 2 points with 7 komi (2012).
-- **pro-computer-do2.sgf**: Cho Riyu 8p beats the program Zen by half a point at the first Go Denosen (2014).
-- **pro-misc-igofestival2008-6.sgf**: An exchange game: 28 stones captured between them over 89 moves, decided by 1.5 points.
-- **pro-minigo-990612.sgf**: Trades all over the board: 8 captures each, and White wins by 11.5.
-- **pro-minigo-881224.sgf**: Only 29 moves: most of the board is still open. Counting it means judging every border.
-- **pro-misc-iyama-6crown-3.sgf**: Iyama Yuta vs Yuki Satoshi at Iyama's six-crown celebration (2013).
-
-| File | Black | White | Date | Komi | Result | Moves | Scoring |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pro-minigo-981031.sgf | Kudo Norio 9p | Yamada Kimio 7p | 1998-10-31 | 6.5 | W+5.5 | 58 | playouts |
-| pro-go-seigen-1968-08-00.sgf | Miyamoto Naoki 8d | Go Seigen 9d | 1968 | 0 | B+4 | 80 | playouts + neutral point |
-| pro-go-seigen-1968-09-00a.sgf | Go Seigen 9d | Miyamoto Naoki 8d | 1968 | 0 | B+4 | 53 | playouts, fitted |
-| pro-computer-ji1.sgf | Zhou Junxun 9p | Fuego | 2009-08-22 | 7.5 | W+2.5 | 46 | playouts |
-| pro-computer-oz2.sgf | Ohashi Hirofumi 5p | Zen | 2012-03-17 | 7 | W+2 | 42 | playouts |
-| pro-computer-do2.sgf | Cho Riyu 8p | Zen | 2014-02-11 | 6.5 | B+0.5 | 54 | playouts |
-| pro-misc-igofestival2008-6.sgf | Suzuki Ayumi 4p | Izawa Akino 4p | 2008-11-03 | 6.5 | B+1.5 | 89 | playouts + neutral point |
-| pro-minigo-990612.sgf | Cho Riyu 3p | Yamada Wakio 7p | 1999-06-12 | 6.5 | W+11.5 | 58 | playouts |
-| pro-minigo-881224.sgf | Hashiguchi Mika | Kageyama Toshiyuki | 1988-12-24 | 5.5 | B+2.5 | 29 | playouts |
-| pro-misc-iyama-6crown-3.sgf | Iyama Yuta 9p | Yuki Satoshi 9p | 2013-05-12 | 6.5 | W+2.5 | 47 | playouts + neutral point |
-
-### More games (40)
-
-| File | Black | White | Date | Komi | Result | Moves | Scoring |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pro-minigo-931106.sgf | Yanagawa Hiromasa 5p | Cho Chikun 9p | 1993-11-06 | 5.5 | W+3.5 | 72 | as played |
-| pro-minigo-931030.sgf | Yamada Wakio 7p | Cho Chikun 9p | 1993-10-30 | 5.5 | W+0.5 | 50 | as played |
-| pro-minigo-950909.sgf | Kurahashi Masayuki 6p | Ma Xiaochun 9p | 1995-09-09 | 5.5 | B+4.5 | 63 | as played |
-| pro-minigo-001022.sgf | Tanimura Yoshiyuki 7p | Takemiya Masaki 9p | 2000-10-22 | 6.5 | W+5.5 | 57 | as played |
-| pro-minigo-001112.sgf | Takemiya Masaki 9p | Yuki Satoshi 9p | 2000-11-12 | 6.5 | B+2.5 | 51 | as played |
-| pro-minigo-980523.sgf | Kurahashi Masayuki 8p | Ishida Yoshio 9p | 1998-05-23 | 6.5 | W+1.5 | 52 | playouts |
-| pro-minigo-020609.sgf | Shiraishi Kyoko 3p | Yuki Satoshi 9p | 2002-06-09 | 6.5 | W+2.5 | 29 | as played |
-| pro-nhk-1989-2.sgf | Ishikura Noboru 7p | Koyama Shizuo 6p | 1989 | 5.5 | B+0.5 | 51 | as played |
-| pro-nhk-newyear2002-3.sgf | Aoki Kikuyo 8p | Mannami Kana 2p | 2002-01-02 | 6.5 | B+1.5 | 53 | as played |
-| pro-misc-igofestival2008-3.sgf | Umezawa Yukari Female Kisei | Osawa Narumi 3p | 2008-11-03 | 6.5 | B+2.5 | 62 | as played |
-| pro-propairgo-pg2004-d-1.sgf | Yoshida Mika, 8p & Ishida Yoshio, 9p | Kato Tomoko, 5p & Cho Sonjin, 9p | 2003-12-06 | 6.5 | W+3.5 | 48 | as played |
-| pro-minigo-011202.sgf | Yamada Kimio 8p | Cho Hunhyun 9p | 2001-12-02 | 6.5 | W+0.5 | 51 | playouts |
-| pro-minigo-011216.sgf | Yamada Kimio 8p | Cho Hunhyun 9p | 2001-12-16 | 6.5 | B+3.5 | 54 | playouts |
-| pro-minigo-940115.sgf | Aragaki Shun 6p | Cho Chikun 9p | 1994-01-15 | 5.5 | W+0.5 | 38 | playouts |
-| pro-minigo-950819.sgf | Ma Xiaochun 9p | Tsukuda Akiko 1p | 1995-08-19 | 5.5 | B+1.5 | 56 | playouts |
-| pro-minigo-950826.sgf | Aragaki Shun 7p | Ma Xiaochun 9p | 1995-08-26 | 5.5 | W+10.5 | 48 | playouts |
-| pro-minigo-980425.sgf | Yanagawa Hiromasa 6p | Ishida Yoshio 9p | 1998-04-25 | 6.5 | W+4.5 | 53 | playouts |
-| pro-minigo-981010.sgf | Yamada Kimio 7p | Kudo Norio 9p | 1998-10-10 | 6.5 | W+2.5 | 68 | playouts |
-| pro-minigo-981205.sgf | Yamada Kimio 7p | Kudo Norio 9p | 1998-12-05 | 6.5 | B+0.5 | 40 | as played |
-| pro-minigo-001210.sgf | Takemiya Masaki 9p | Yamada Kimio 8p | 2000-12-10 | 6.5 | B+4.5 | 40 | playouts |
-| pro-minigo-001224.sgf | Takemiya Masaki 9p | Yamada Kimio 8p | 2000-12-24 | 6.5 | W+6.5 | 50 | as played |
-| pro-misc-iyama-6crown-1.sgf | Murakawa Daisuke 8p | Iyama Yuta 9p | 2013-05-12 | 6.5 | W+1.5 | 62 | playouts |
-| pro-propairgo-pg2004-d-4.sgf | Konishi Kazuko, 7p & O Meien, 9p | Aoki Kikuyo, 8p & Otake Hideo, Honorary Gosei | 2003-12-06 | 6.5 | W+0.5 | 41 | playouts |
-| pro-propairgo-pg2009-d-1.sgf | Umezawa Yukari, Female Kisei & Imamura Toshiya, 9p | Konishi Kazuko, 8p & Yoda Norimoto, 9p | 2008-12-06 | 6.5 | B+0.5 | 72 | playouts |
-| pro-misc-igofestival2008-p3.sgf | Aoki Kikuyo 8p | Izawa Akino 4p | 2008-09-13 | 6.5 | W+0.5 | 68 | as played |
-| pro-minigo-020519.sgf | Yuki Satoshi 9p | Ko Reibun 3p | 2002-05-19 | 6.5 | B+2.5 | 68 | playouts |
-| pro-minigo-980829.sgf | Umezawa Yukari 1p | Hasegawa Hiro 2p | 1998-08-29 | 6.5 | W+3.5 | 68 | playouts |
-| pro-minigo-931204.sgf | Cho Chikun 9p, Honinbo | Enda Hideki 7p | 1993-12-04 | 5.5 | B+6.5 | 63 | playouts + neutral point |
-| pro-minigo-990529.sgf | Cho U 6p | Yamada Wakio 7p | 1999-05-29 | 6.5 | W+2.5 | 52 | playouts, fitted |
-| pro-minigo-001203.sgf | Kurahashi Masayuki 9p | Takemiya Masaki 9p | 2000-12-03 | 6.5 | B+0.5 | 84 | playouts, fitted |
-| pro-minigo-981024.sgf | Yamada Kimio 7p, Oza | Kudo Norio 9p, Tengen | 1998-10-24 | 6.5 | B+0.5 | 61 | playouts + neutral point |
-| pro-minigo-890826.sgf | Tanaka Hideharu | Hayashi Kozo | 1989-08-26 | 5.5 | B+0.5 | 83 | playouts |
-| pro-minigo-881105.sgf | Tanimura Yoshiyuki | Hayashi Kozo | 1988-11-05 | 5.5 | B+3.5 | 67 | as played |
-| pro-minigo-890408.sgf | Minematsu Masaki | Aragaki Shun | 1989-04-08 | 5.5 | W+1.5 | 63 | playouts |
-| pro-minigo-900505.sgf | Konno Tameto | Yamada Wakio | 1990-05-05 | 5.5 | W+1.5 | 29 | as played |
-| pro-minigo-890415.sgf | Takabayashi Masahiro | Hayashi Kozo | 1989-04-15 | 5.5 | B+0.5 | 35 | playouts |
-| pro-minigo-881231.sgf | Sasaka Shiro | Hashiguchi Mika | 1988-12-31 | 5.5 | B+12.5 | 44 | playouts |
-| pro-nhk-newyear2009-1.sgf | Mannami Nao 2p | Uchida Shuhei Shinjin-O | 2009-01-04 | 6.5 | W+0.5 | 45 | playouts |
-| pro-minigo-960921.sgf | Kori Toshio 8p | Sakakibara Fumiko 5p | 1996-09-21 | 6.5 | W+0.5 | 77 | playouts, fitted |
-| pro-minigo-971108.sgf | Aragaki Shun 8p | Ruan Yunsheng 7p | 1997-11-08 | 6.5 | W+0.5 | 31 | playouts + neutral point |
+| File | Black | White | Date | Komi | Result | Moves | Scoring | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| pro-minigo-981031.sgf | Kudo Norio 9p | Yamada Kimio 7p | 1998-10-31 | 6.5 | W+5.5 | 58 | playouts | Mirror go: White copies Black's moves through the centre point for 13 moves in a row. |
+| pro-go-seigen-1968-08-00.sgf | Miyamoto Naoki 8d | Go Seigen 9d | 1968 | 0 | B+4 | 80 | playouts + neutral point | Go Seigen plays 9x9 with no komi. A long game (80 moves) with captures on both sides. |
+| pro-go-seigen-1968-09-00a.sgf | Go Seigen 9d | Miyamoto Naoki 8d | 1968 | 0 | B+4 | 53 | playouts, fitted | Go Seigen as Black, no komi. The record stops with borders still open, so the score is reconstructed. |
+| pro-computer-ji1.sgf | Zhou Junxun 9p | Fuego | 2009-08-22 | 7.5 | W+2.5 | 46 | playouts | The program Fuego, as White, beats Zhou Junxun 9p in an even 9x9 game (2009). |
+| pro-computer-oz2.sgf | Ohashi Hirofumi 5p | Zen | 2012-03-17 | 7 | W+2 | 42 | playouts | The program Zen, as White, beats Ohashi Hirofumi 5p by 2 points with 7 komi (2012). |
+| pro-computer-do2.sgf | Cho Riyu 8p | Zen | 2014-02-11 | 6.5 | B+0.5 | 54 | playouts | Cho Riyu 8p beats the program Zen by half a point at the first Go Denosen (2014). |
+| pro-misc-igofestival2008-6.sgf | Suzuki Ayumi 4p | Izawa Akino 4p | 2008-11-03 | 6.5 | B+1.5 | 89 | playouts + neutral point | An exchange game: 28 stones captured between them over 89 moves, decided by 1.5 points. |
+| pro-minigo-990612.sgf | Cho Riyu 3p | Yamada Wakio 7p | 1999-06-12 | 6.5 | W+11.5 | 58 | playouts | Trades all over the board: 8 captures each, and White wins by 11.5. |
+| pro-minigo-881224.sgf | Hashiguchi Mika | Kageyama Toshiyuki | 1988-12-24 | 5.5 | B+2.5 | 29 | playouts | Only 29 moves: most of the board is still open. Counting it means judging every border. |
+| pro-misc-iyama-6crown-3.sgf | Iyama Yuta 9p | Yuki Satoshi 9p | 2013-05-12 | 6.5 | W+2.5 | 47 | playouts + neutral point | Iyama Yuta vs Yuki Satoshi at Iyama's six-crown celebration (2013). |
+| pro-minigo-931106.sgf | Yanagawa Hiromasa 5p | Cho Chikun 9p | 1993-11-06 | 5.5 | W+3.5 | 72 | as played | Black opens on the centre point (tengen). 72 moves and 16 stones captured; Cho Chikun wins as White by 3.5. |
+| pro-minigo-931030.sgf | Yamada Wakio 7p | Cho Chikun 9p | 1993-10-30 | 5.5 | W+0.5 | 50 | as played | Cho Chikun again, against another tengen opening. Only 3 stones captured, and White wins by half a point. |
+| pro-minigo-950909.sgf | Kurahashi Masayuki 6p | Ma Xiaochun 9p | 1995-09-09 | 5.5 | B+4.5 | 63 | as played | Black takes four stones with the very last move (63) and beats Ma Xiaochun 9p by 4.5. |
+| pro-minigo-001022.sgf | Tanimura Yoshiyuki 7p | Takemiya Masaki 9p | 2000-10-22 | 6.5 | W+5.5 | 57 | as played | Takemiya Masaki as White, with 6.5 komi. A quiet game: 2 captures each, and W+5.5. |
+| pro-minigo-001112.sgf | Takemiya Masaki 9p | Yuki Satoshi 9p | 2000-11-12 | 6.5 | B+2.5 | 51 | as played | Takemiya Masaki now as Black, against Yuki Satoshi. Five captures in all, and Black wins by 2.5. |
+| pro-minigo-980523.sgf | Kurahashi Masayuki 8p | Ishida Yoshio 9p | 1998-05-23 | 6.5 | W+1.5 | 52 | playouts | Not a single stone captured in 52 moves. Two stones of each colour are left dead on the board at the end. |
+| pro-minigo-020609.sgf | Shiraishi Kyoko 3p | Yuki Satoshi 9p | 2002-06-09 | 6.5 | W+2.5 | 29 | as played | Only 29 moves and no captures: the borders are settled early. Yuki Satoshi wins as White by 2.5. |
+| pro-nhk-1989-2.sgf | Ishikura Noboru 7p | Koyama Shizuo 6p | 1989 | 5.5 | B+0.5 | 51 | as played | A TV game from NHK. Black opens on tengen and wins by half a point with 5.5 komi. |
+| pro-nhk-newyear2002-3.sgf | Aoki Kikuyo 8p | Mannami Kana 2p | 2002-01-02 | 6.5 | B+1.5 | 53 | as played | An NHK New Year game between two women professionals. Black wins by 1.5. |
+| pro-misc-igofestival2008-3.sgf | Umezawa Yukari Female Kisei | Osawa Narumi 3p | 2008-11-03 | 6.5 | B+2.5 | 62 | as played | Umezawa Yukari, holding the Female Kisei title, opens on tengen. Black captures 6 stones to White's 1. |
+| pro-propairgo-pg2004-d-1.sgf | Yoshida Mika, 8p & Ishida Yoshio, 9p | Kato Tomoko, 5p & Cho Sonjin, 9p | 2003-12-06 | 6.5 | W+3.5 | 48 | as played | Pair go: four players, alternating within each team. White's pair wins by 3.5 in 48 moves. |
+| pro-minigo-011202.sgf | Yamada Kimio 8p | Cho Hunhyun 9p | 2001-12-02 | 6.5 | W+0.5 | 51 | playouts | Cho Hunhyun as White wins by half a point. The pair play again two weeks later (next game). |
+| pro-minigo-011216.sgf | Yamada Kimio 8p | Cho Hunhyun 9p | 2001-12-16 | 6.5 | B+3.5 | 54 | playouts | The rematch: no captures at all, but 8 white stones are dead at the end, and Black wins by 3.5. |
+| pro-minigo-940115.sgf | Aragaki Shun 6p | Cho Chikun 9p | 1994-01-15 | 5.5 | W+0.5 | 38 | playouts | A short game, 38 moves. Cho Chikun loses 3 stones but still wins by half a point. |
+| pro-minigo-950819.sgf | Ma Xiaochun 9p | Tsukuda Akiko 1p | 1995-08-19 | 5.5 | B+1.5 | 56 | playouts | Ma Xiaochun 9p against Tsukuda Akiko 1p. A capturing game (12 stones), and Black wins by 1.5. |
+| pro-minigo-950826.sgf | Aragaki Shun 7p | Ma Xiaochun 9p | 1995-08-26 | 5.5 | W+10.5 | 48 | playouts | Ma Xiaochun as White wins by 10.5, one of the three biggest margins here. |
+| pro-minigo-980425.sgf | Yanagawa Hiromasa 6p | Ishida Yoshio 9p | 1998-04-25 | 6.5 | W+4.5 | 53 | playouts | Ishida Yoshio as White. One capture each, and the count shows W+4.5. |
+| pro-minigo-981010.sgf | Yamada Kimio 7p | Kudo Norio 9p | 1998-10-10 | 6.5 | W+2.5 | 68 | playouts | One of four games between Yamada Kimio and Kudo Norio in late 1998 (the mirror game is another). 17 stones captured. |
+| pro-minigo-981205.sgf | Yamada Kimio 7p | Kudo Norio 9p | 1998-12-05 | 6.5 | B+0.5 | 40 | as played | Yamada and Kudo again: a 40-move game decided by half a point. |
+| pro-minigo-001210.sgf | Takemiya Masaki 9p | Yamada Kimio 8p | 2000-12-10 | 6.5 | B+4.5 | 40 | playouts | No captures, but 4 white stones are dead at the end. Takemiya Masaki wins as Black by 4.5. |
+| pro-minigo-001224.sgf | Takemiya Masaki 9p | Yamada Kimio 8p | 2000-12-24 | 6.5 | W+6.5 | 50 | as played | Two weeks later, the same players: one capture in 50 moves, and this time White wins by 6.5. |
+| pro-misc-iyama-6crown-1.sgf | Murakawa Daisuke 8p | Iyama Yuta 9p | 2013-05-12 | 6.5 | W+1.5 | 62 | playouts | Iyama Yuta as White at his six-crown celebration (2013). Three black stones are dead at the end; W+1.5. |
+| pro-propairgo-pg2004-d-4.sgf | Konishi Kazuko, 7p & O Meien, 9p | Aoki Kikuyo, 8p & Otake Hideo, Honorary Gosei | 2003-12-06 | 6.5 | W+0.5 | 41 | playouts | Pair go with Otake Hideo on the White team. Black captures 4 stones but loses by half a point. |
+| pro-propairgo-pg2009-d-1.sgf | Umezawa Yukari, Female Kisei & Imamura Toshiya, 9p | Konishi Kazuko, 8p & Yoda Norimoto, 9p | 2008-12-06 | 6.5 | B+0.5 | 72 | playouts | Pair go, 72 moves and 13 stones captured. Black's pair wins by half a point. |
+| pro-misc-igofestival2008-p3.sgf | Aoki Kikuyo 8p | Izawa Akino 4p | 2008-09-13 | 6.5 | W+0.5 | 68 | as played | A women's 9x9 match. 68 moves, 13 stones captured, and White wins by half a point. |
+| pro-minigo-020519.sgf | Yuki Satoshi 9p | Ko Reibun 3p | 2002-05-19 | 6.5 | B+2.5 | 68 | playouts | A long, open fight: 68 moves and 12 captures. Yuki Satoshi wins as Black by 2.5. |
+| pro-minigo-980829.sgf | Umezawa Yukari 1p | Hasegawa Hiro 2p | 1998-08-29 | 6.5 | W+3.5 | 68 | playouts | White takes 5 stones with the very last move (67) and wins by 3.5. |
+| pro-minigo-931204.sgf | Cho Chikun 9p, Honinbo | Enda Hideki 7p | 1993-12-04 | 5.5 | B+6.5 | 63 | playouts + neutral point | Cho Chikun, then Honinbo, as Black. The A9 corner point is left open, so it counts as neutral. |
+| pro-minigo-990529.sgf | Cho U 6p | Yamada Wakio 7p | 1999-05-29 | 6.5 | W+2.5 | 52 | playouts, fitted | Cho U as Black. To match the recorded W+2.5, a 5-stone black group at the top edge has to count as dead. |
+| pro-minigo-001203.sgf | Kurahashi Masayuki 9p | Takemiya Masaki 9p | 2000-12-03 | 6.5 | B+0.5 | 84 | playouts, fitted | 84 moves, the second-longest game here, with 17 stones captured. Black wins by half a point. |
+| pro-minigo-981024.sgf | Yamada Kimio 7p, Oza | Kudo Norio 9p, Tengen | 1998-10-24 | 6.5 | B+0.5 | 61 | playouts + neutral point | Yamada Kimio (Oza) vs Kudo Norio (Tengen), title holders. The A9 corner point counts as neutral; B+0.5. |
+| pro-minigo-890826.sgf | Tanaka Hideharu | Hayashi Kozo | 1989-08-26 | 5.5 | B+0.5 | 83 | playouts | 83 moves and 23 stones captured, second only to the 89-move exchange game. Black wins by half a point. |
+| pro-minigo-881105.sgf | Tanimura Yoshiyuki | Hayashi Kozo | 1988-11-05 | 5.5 | B+3.5 | 67 | as played | Black opens on tengen and captures 8 stones in one move near the end (65). B+3.5. |
+| pro-minigo-890408.sgf | Minematsu Masaki | Aragaki Shun | 1989-04-08 | 5.5 | W+1.5 | 63 | playouts | An even trade: Black captures 10, White 8, and White wins by 1.5. |
+| pro-minigo-900505.sgf | Konno Tameto | Yamada Wakio | 1990-05-05 | 5.5 | W+1.5 | 29 | as played | Only 29 moves, with a single capture: a short game that still goes to a count. W+1.5. |
+| pro-minigo-890415.sgf | Takabayashi Masahiro | Hayashi Kozo | 1989-04-15 | 5.5 | B+0.5 | 35 | playouts | 35 moves, no captures, and one dead stone of each colour. Black wins by half a point. |
+| pro-minigo-881231.sgf | Sasaka Shiro | Hashiguchi Mika | 1988-12-31 | 5.5 | B+12.5 | 44 | playouts | Black wins by 12.5, the biggest margin of the counted games here. |
+| pro-nhk-newyear2009-1.sgf | Mannami Nao 2p | Uchida Shuhei Shinjin-O | 2009-01-04 | 6.5 | W+0.5 | 45 | playouts | An NHK New Year game (2009). Black opens on tengen, loses 3 stones, and loses by half a point. |
+| pro-minigo-960921.sgf | Kori Toshio 8p | Sakakibara Fumiko 5p | 1996-09-21 | 6.5 | W+0.5 | 77 | playouts, fitted | 77 moves, 10 captures each. To match W+0.5, two small groups the computer was unsure of count as dead. |
+| pro-minigo-971108.sgf | Aragaki Shun 8p | Ruan Yunsheng 7p | 1997-11-08 | 6.5 | W+0.5 | 31 | playouts + neutral point | Only 31 moves. Two points in the top-left corner (A9, B9) are left open and count as neutral; W+0.5. |
 <!-- games:end -->
 
 ## How the scores are worked out
@@ -99,7 +83,7 @@ The "Scoring" column: *as played* = no dead stones needed; *playouts* = dead sto
 node tools/add-games.mjs docs/games/9x9/pro --root <collection>/9x9 <collection>/9x9/Minigo/931106.sgf ...
 ```
 
-It copies each SGF in unchanged (named after its path, e.g. `pro-minigo-931106.sgf`), skips games that aren't 9x9, are already here, didn't end in a count, or whose count can't be matched to the recorded result, scores the rest, appends them to `index.json`, and rebuilds the tables above. Add `--about "..."` with a single file to give it a note; noted games are listed first in the menu. Menu order is the order in `index.json`.
+It copies each SGF in unchanged (named after its path, e.g. `pro-minigo-931106.sgf`), skips games that aren't 9x9, are already here, didn't end in a count, or whose count can't be matched to the recorded result, scores the rest, appends them to `index.json`, and rebuilds the tables above. Add `--about "..."` with a single file to give it a note, or add an `about` to its entry in `index.json`; every game has one, shown under the game menu. Menu order is the order in `index.json`.
 
 To rescore existing games: `node tools/score-games.mjs docs/games/9x9/pro [file.sgf ...]` (about 3 seconds per game). After editing `index.json` by hand: `node tools/add-games.mjs docs/games/9x9/pro --readme`.
 
