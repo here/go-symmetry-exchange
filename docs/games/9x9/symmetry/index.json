@@ -1,11 +1,11 @@
 [
   {
-    "file": "edge-jump.sgf",
-    "label": "Five-space jump on the edge",
+    "file": "edge-jump-3.sgf",
+    "label": "Three-space jump on the edge",
     "black": "",
     "white": "",
     "result": "",
-    "about": "Black's two stones on the third line, B3 and H3, have five empty points between them. The middle one, E3, is the point of symmetry: White splits them there. ← shows the position before.",
+    "about": "Black's two stones on the third line, C3 and G3, have three empty points between them. The middle one, E3, is the point of symmetry: White splits them there. ← shows the position before.",
     "demo": true
   },
   {

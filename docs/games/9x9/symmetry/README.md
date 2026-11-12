@@ -4,6 +4,6 @@ Shown on the "Symmetry plays" slide, after the "Symmetry" section intro. Three s
 
 | Position | Stones | Symmetric move |
 | --- | --- | --- |
-| Five-space jump on the edge | Black B3, H3 (third line, five points apart) | White E3, the middle point |
+| Three-space jump on the edge | Black C3, G3 (third line, three empty points between) | White E3, the middle point |
 | Between a knight's move | Black C6, D4 | White D5; C5 is its mirror image |
 | The centre of the board | none | Black E5 (tengen), then Black mirrors White through E5: C7/G3, G7/C3, D3/F7 |
