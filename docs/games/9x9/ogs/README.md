@@ -1,6 +1,6 @@
 # Online 9x9 games (OGS)
 
-Shown on the "Online games (OGS)" slide. Dead stones in `index.json` are the ones the players marked on OGS at the end of each game.
+Shown on the "Beginner games" slide. Dead stones in `index.json` are the ones the players marked on OGS at the end of each game.
 
 SGFs downloaded from online-go.com (OGS) on 2026-11-07 using `https://online-go.com/api/v1/games/<id>/sgf`.
 To view a game online, open `https://online-go.com/game/<id>`.

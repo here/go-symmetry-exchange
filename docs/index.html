@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113000327">
+  <link rel="stylesheet" href="style.css?v=20261113000421">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -24,10 +24,6 @@
 
   <!-- Board slides: each one gets a copy of #board-template, filled by app.js. data-title is only used as the board's accessible name.
        data-games is the folder with that slide's index.json and SGF files. -->
-  <main class="slide layout board-slide" id="ogs" data-keys="board" data-games="games/9x9/ogs/" data-title="Online games (OGS)"></main>
-
-  <main class="slide layout board-slide" id="pro" data-keys="board" data-games="games/9x9/pro/" data-title="Pro games"></main>
-
   <template id="board-template">
     <section class="board-wrap">
       <svg class="board" data-role="board" role="img" aria-label="Go board"></svg>
@@ -141,10 +137,14 @@
     <p class="hint">More: <a href="https://senseis.xmp.net/?topic=1111" target="_blank" rel="noopener">Sensei's Library discussion</a> · <a href="https://en.wikipedia.org/wiki/Go_proverb" target="_blank" rel="noopener">Go proverbs (Wikipedia)</a></p>
   </section>
 
+  <main class="slide layout board-slide" id="ogs" data-keys="board" data-games="games/9x9/ogs/" data-title="Beginner games"></main>
+
+  <main class="slide layout board-slide" id="pro" data-keys="board" data-games="games/9x9/pro/" data-title="Pro games"></main>
+
   <!-- Demo board: an empty 9x9 to play on from scratch. -->
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113000327"></script>
+  <script type="module" src="app.js?v=20261113000421"></script>
 </body>
 </html>
