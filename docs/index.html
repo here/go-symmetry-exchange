@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113010858">
+  <link rel="stylesheet" href="style.css?v=20261113010927">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -94,12 +94,12 @@
       <figure>
         <img src="images/c-base-board.jpg" width="2000" height="1500" loading="lazy"
              alt="A 19x19 Go board seen from above, divided by a full row of black stones across the middle: six good shapes for Black below the row and six bad shapes above it.">
-        <figcaption><a href="https://senseis.xmp.net/?SixGoodAndSixBadShapes" target="_blank" rel="noopener">six good and six bad shapes</a>: strong for black below, weak for black above</figcaption>
+        <figcaption><a href="https://senseis.xmp.net/?SixGoodAndSixBadShapes" target="_blank" rel="noopener">six good and six bad shapes</a><br>strong for black below, weak for black above</figcaption>
       </figure>
       <figure>
         <img src="images/c-base-mike.jpg" width="2000" height="1500" loading="lazy"
              alt="Mike at a desk in the 2000s, next to a Go board covered in stones, a mug and a trackball.">
-        <figcaption>(and questionable hair choices)</figcaption>
+        <figcaption>questionable hair choices</figcaption>
       </figure>
     </div>
     <div class="image-text">
@@ -207,6 +207,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113010858"></script>
+  <script type="module" src="app.js?v=20261113010927"></script>
 </body>
 </html>
