@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113011237">
+  <link rel="stylesheet" href="style.css?v=20261113011320">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -126,9 +126,8 @@
   <main class="slide layout board-slide" id="mirror" data-keys="board" data-size="19" data-games="games/19x19/mirror/" data-title="Mirror go (1929)"></main>
 
   <section class="slide proverb-slide" id="basic-shapes" data-title="Basic shapes">
-    <p class="kicker">Basic shapes</p>
-    <blockquote class="proverb">Ponnuki is worth thirty points.</blockquote>
-    <p class="proverb-origin">The number isn't literal: it says how strong the shape is. Good shape is stones working together efficiently; bad shape wastes them.</p>
+    <h2 class="proverb section-title">Basic Shapes</h2>
+    <p class="proverb-origin">Ponnuki is worth thirty points</p>
     <ul class="points">
       <li><strong>Ponnuki.</strong> Four stones around one empty point, left after capturing a stone. Strong in every direction.</li>
       <li><strong>Bamboo joint.</strong> Two pairs, one space apart. It has two ways to connect, so it can't be cut. But it may be short of liberties.</li>
@@ -210,6 +209,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113011237"></script>
+  <script type="module" src="app.js?v=20261113011320"></script>
 </body>
 </html>
