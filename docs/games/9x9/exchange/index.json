@@ -1,0 +1,12 @@
+[
+  {
+    "file": "chasing-one-stone.sgf",
+    "label": "Chasing one stone",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "White drops one stone at E4. Black spends four moves chasing and capturing it, ending with a ponnuki deep in Black's own area. White ignores it and takes four big points (C7, C5, G5, E6). Step forward with →.",
+    "demo": true,
+    "fromStart": true
+  }
+]

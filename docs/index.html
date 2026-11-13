@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113005328">
+  <link rel="stylesheet" href="style.css?v=20261113005653">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -84,8 +84,7 @@
       <li><span class="toc-name">Symmetry</span><span class="toc-idea">Play at the centre of symmetry, and mirror go in 1929</span><span class="toc-min">3 min</span></li>
       <li><span class="toc-name">Basic shapes</span><span class="toc-idea">Bamboo, tortoise shell, ponnuki, and the empty triangle to avoid</span><span class="toc-min">6 min</span></li>
       <li><span class="toc-name">Groups and two eyes</span><span class="toc-idea">A group lives with two eyes</span><span class="toc-min">8 min</span></li>
-      <li><span class="toc-name">Exchange</span><span class="toc-idea">Sacrifice plums for peaches; don't fear furikawari</span><span class="toc-min">3 min</span></li>
-      <li><span class="toc-name">Tactics</span><span class="toc-idea">Shi, the one-space jump, sente</span><span class="toc-min">3 min</span></li>
+      <li><span class="toc-name">Exchange</span><span class="toc-idea">Sacrifice plums for peaches; don't fear furikawari</span><span class="toc-min">6 min</span></li>
       <li><span class="toc-name">Proverbs</span><span class="toc-idea">Short rules that carry a way of seeing</span><span class="toc-min">2 min</span></li>
       <li><span class="toc-name">Keep learning</span><span class="toc-idea">Tsume-go, playing in person, handicaps</span><span class="toc-min">2 min</span></li>
     </ol>
@@ -167,6 +166,22 @@
   <!-- Two eyes on the edge: three empty points on the top edge, split into two eyes by the middle stone. -->
   <main class="slide layout board-slide" id="edge-eyes" data-keys="board" data-games="games/9x9/edge-eyes/" data-title="Two eyes on the edge"></main>
 
+  <section class="slide proverb-slide" id="exchange" data-title="Exchange">
+    <p class="kicker">Exchange</p>
+    <blockquote class="proverb">Sacrifice plums for peaches.</blockquote>
+    <p class="proverb-origin">Furikawari: give up something small to get something bigger. A stone is only worth what it does for the whole board.</p>
+    <ul class="points">
+      <li><strong>Win the stones, lose the game.</strong> Capturing isn't the goal. Area is, and chasing stones can cost more than they're worth.</li>
+      <li><strong>Give up worthless stones.</strong> A stone that has done its job can be left to die.</li>
+      <li><strong>Play the biggest point.</strong> While your opponent chases a stone, play somewhere bigger.</li>
+      <li><strong>Do not fear furikawari.</strong> Trading one area for another is often the best exchange on the board.</li>
+    </ul>
+    <p class="hint">More: <a href="https://senseis.xmp.net/?EssentialGoProverbs" target="_blank" rel="noopener">Essential Go proverbs</a> · <a href="https://www.philipsmith.ca/Pages/Game_of_Go_pages/Game_of_go_page3_proverbs.htm" target="_blank" rel="noopener">Philip Smith's proverbs page</a></p>
+  </section>
+
+  <!-- Exchange demo: Black chases one stone while White takes the big points; opens on the empty board. -->
+  <main class="slide layout board-slide" id="chasing" data-keys="board" data-games="games/9x9/exchange/" data-title="Chasing one stone"></main>
+
   <section class="slide proverb-slide" id="lose-100" data-title="Lose your first 100 games">
     <p class="kicker">Keep learning</p>
     <blockquote class="proverb">Lose your first 100 games as quickly as possible.</blockquote>
@@ -199,6 +214,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113005328"></script>
+  <script type="module" src="app.js?v=20261113005653"></script>
 </body>
 </html>
