@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113013314">
+  <link rel="stylesheet" href="style.css?v=20261113013352">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -156,6 +156,21 @@
     <p class="hint">More: <a href="https://senseis.xmp.net/?EssentialGoProverbs" target="_blank" rel="noopener">Essential Go proverbs (chapter six, shape)</a> · <a href="https://senseis.xmp.net/?TheBambooJointMayBeShortOfLiberties" target="_blank" rel="noopener">The bamboo joint may be short of liberties</a> · <a href="https://en.wikipedia.org/wiki/Shape_(Go)" target="_blank" rel="noopener">Shape (Wikipedia)</a></p>
   </section>
 
+  <!-- The board photo from the bio slide again, labelled by half: bad shapes above the black line, good shapes below. -->
+  <section class="slide image-slide" id="good-bad-shapes" data-title="Six good and six bad shapes">
+    <div class="halves">
+      <img src="images/c-base-board.jpg" width="2000" height="1500" loading="lazy"
+           alt="The Go board photo from the earlier slide: a full row of black stones across the middle, with six bad shapes for Black above it and six good shapes below it.">
+      <div class="halves-labels" aria-hidden="true">
+        <p class="halves-label weak"><span class="arrow">▲</span> weak for black<span class="halves-sub">six bad shapes above the line</span></p>
+        <p class="halves-label strong"><span class="arrow">▼</span> strong for black<span class="halves-sub">six good shapes below the line</span></p>
+      </div>
+    </div>
+    <div class="image-text">
+      <p><a href="https://senseis.xmp.net/?SixGoodAndSixBadShapes" target="_blank" rel="noopener">six good and six bad shapes</a>: the same board from c-base · <a href="https://www.flickr.com/photos/herebox/353505058/" target="_blank" rel="noopener">photo on Flickr</a></p>
+    </div>
+  </section>
+
   <!-- Shapes: one setup position, playable like the other boards. -->
   <main class="slide layout board-slide" id="shapes" data-keys="board" data-games="games/9x9/shapes/" data-title="Shapes"></main>
 
@@ -228,6 +243,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113013314"></script>
+  <script type="module" src="app.js?v=20261113013352"></script>
 </body>
 </html>

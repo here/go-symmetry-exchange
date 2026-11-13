@@ -270,6 +270,19 @@ input[type="range"] { width: 100%; margin: 0 0 16px; accent-color: var(--accent)
 /* Portraits of different shapes: same height, cropped from the top so faces stay in view. */
 .photo-pair.players img { height: 46vh; max-height: none; object-position: top; }
 .photo-pair.players strong { color: var(--fg); }
+/* Photo with a label beside each half (good and bad shapes slide). */
+.halves { display: grid; grid-template-columns: minmax(0, 3fr) minmax(150px, 1fr); gap: 24px; align-items: stretch; width: 100%; }
+.halves img { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: contain; border-radius: 8px; }
+.halves-labels { display: flex; flex-direction: column; justify-content: space-around; }
+.halves-label { margin: 0; font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 700; line-height: 1.2; }
+.halves-label.weak { color: var(--muted); }
+.halves-label.strong { color: var(--fg); }
+.halves-label .arrow { color: var(--accent); }
+.halves-sub { display: block; font-size: 1rem; font-weight: 400; color: var(--muted); margin-top: 4px; }
+@media (max-width: 640px) {
+  .halves { grid-template-columns: 1fr; }
+  .halves-labels { flex-direction: row; justify-content: space-between; gap: 16px; }
+}
 .image-slide figcaption { font-size: .8rem; color: var(--muted); margin-top: 8px; }
 .image-text { text-align: center; max-width: 60ch; }
 .image-text h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin: 0 0 8px; }
