@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113004833">
+  <link rel="stylesheet" href="style.css?v=20261113005315">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -145,6 +145,19 @@
   <!-- Shapes: one setup position, playable like the other boards. -->
   <main class="slide layout board-slide" id="shapes" data-keys="board" data-games="games/9x9/shapes/" data-title="Shapes"></main>
 
+  <section class="slide proverb-slide" id="live-two-eyes" data-title="Live with two eyes">
+    <p class="kicker">Groups and two eyes</p>
+    <blockquote class="proverb">A group lives with two eyes.</blockquote>
+    <p class="proverb-origin">The basic rule of life and death. Stones that connect form a group, and a group that can never be captured is alive.</p>
+    <ul class="points">
+      <li><strong>One eye dies.</strong> The opponent fills the outside liberties, then plays in the eye and captures the whole group.</li>
+      <li><strong>Two eyes live.</strong> A stone in either eye would have no liberties, so it can't be played. Neither eye can ever be filled.</li>
+      <li><strong>Edges help.</strong> A group in the centre needs more room for its eyes; on the edge or in a corner, the same group lives in a smaller space.</li>
+      <li><strong>Pay for it elsewhere.</strong> Giving up stones somewhere else (furikawari) is often the price of making two eyes here.</li>
+    </ul>
+    <p class="hint">More: <a href="https://senseis.xmp.net/?LifeAndDeath" target="_blank" rel="noopener">Life and death (Sensei's Library)</a> · <a href="https://en.wikipedia.org/wiki/Life_and_death" target="_blank" rel="noopener">Life and death (Wikipedia)</a></p>
+  </section>
+
   <!-- One eye, then two eyes: each built move by move, opening on the finished position with White to play. -->
   <main class="slide layout board-slide" id="one-eye" data-keys="board" data-games="games/9x9/one-eye/" data-title="One eye"></main>
 
@@ -185,6 +198,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113004833"></script>
+  <script type="module" src="app.js?v=20261113005315"></script>
 </body>
 </html>
