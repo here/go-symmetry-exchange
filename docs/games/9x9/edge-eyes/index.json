@@ -14,7 +14,7 @@
     "black": "",
     "white": "",
     "result": "",
-    "about": "Four black groups, each surrounded by White, each living with two one-point eyes. Top edge: D9 and F9. Left side: A5 and C5. Bottom left corner: A1 and C1. Bottom right corner: J1 and J3. White can't play in any of the eight eyes.",
+    "about": "Three black groups, each surrounded by White, each living with two one-point eyes. Top edge: D9 and F9. Bottom left corner: A2 and B1, with A1 and B2 filled in (the A1 stone's only liberties are the two eyes). Bottom right corner: J1 and J3. White can't play in any of the six eyes.",
     "demo": true
   }
 ]

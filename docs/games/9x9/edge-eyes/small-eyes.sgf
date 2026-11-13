@@ -1,4 +1,4 @@
 (;GM[1]FF[4]SZ[9]KM[0]PL[W]GN[Small two-eye shapes]
-C[Four black groups, each with two one-point eyes, so each lives although White surrounds it. Top edge: D9 and F9. Left side: A5 and C5. Bottom left corner: A1 and C1. Bottom right corner: J1 and J3.]
-AB[ca][cb][db][eb][fb][gb][ga][ea][ad][bd][cd][dd][de][df][cf][bf][af][be][bi][ah][bh][ch][dh][di][hi][hh][ih][hg][hf][if]
-AW[ba][bb][cc][dc][ec][fc][gc][hb][ha][ac][bc][ed][ee][ef][ag][bg][cg][dg][eg][eh][ei][gi][gh][gg][gf][ge][he][ie])
+C[Three black groups, each with two one-point eyes, so each lives although White surrounds it. Top edge: D9 and F9. Bottom left corner: A2 and B1. Bottom right corner: J1 and J3.]
+AB[ca][cb][db][eb][fb][gb][ga][ea][ai][bh][ag][bg][ch][ci][hi][hh][ih][hg][hf][if]
+AW[ba][bb][cc][dc][ec][fc][gc][hb][ha][af][bf][cf][cg][dg][dh][di][gi][gh][gg][gf][ge][he][ie])

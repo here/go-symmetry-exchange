@@ -15,14 +15,12 @@ The position is built as moves (1 white stone as setup, then 8 white and 8 black
 
 ## Small two-eye shapes
 
-The slide's second board (`small-eyes.sgf`, a setup position with no moves). The top-edge group from the first board, finished, plus three more small black groups, each surrounded by White and each living with two one-point eyes:
+The slide's second board (`small-eyes.sgf`, a setup position with no moves). The top-edge group from the first board, finished, plus two more small black groups in the bottom corners, each surrounded by White and each living with two one-point eyes:
 
 | Group | Eyes | Black stones (SGF) |
 | --- | --- | --- |
 | Top edge | D9, F9 | ca cb db eb fb gb ga ea |
-| Left side | A5, C5 | ad bd cd dd be de af bf cf df |
-| Bottom left corner | A1, C1 | ah bh ch dh bi di |
+| Bottom left corner | A2, B1 | ag bg bh ch ci, and ai (A1) on its own |
 | Bottom right corner | J1, J3 | hf if hg hh ih hi |
 
-Each black group's only liberties are its two eyes, and a white stone in any of them is illegal. White's walls (`ba bb cc dc ec fc gc hb ha ac bc ed ee ef ag bg cg dg eg eh ei gi gh gg gf ge he ie`) keep liberties of their own along the F column and the right edge.
-
+In the bottom left corner, A1 and B2 are filled in. The A1 stone touches only the two eyes, so its liberties are the same two points as the main group's, and a white stone in either eye is still illegal. In every group, a white stone in an eye has no liberties and captures nothing. White's walls (`ba bb cc dc ec fc gc hb ha af bf cf cg dg dh di gi gh gg gf ge he ie`) keep liberties of their own.
