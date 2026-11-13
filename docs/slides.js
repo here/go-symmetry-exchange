@@ -1,13 +1,13 @@
 // Slide show: shows one .slide at a time.
 //
-// Next:      Space, Page Down, → ↓ (except on board slides)
-// Previous:  Shift+Space, Page Up, ← ↑ (except on board slides)
+// Next:      Space, Page Down, ↓, → (except on board slides)
+// Previous:  Shift+Space, Page Up, ↑, ← (except on board slides)
 // First/last: Home / End (except on board slides)
 // Full screen: F (Esc leaves)
 //
-// Slides marked data-keys="board" leave the arrow keys, Home and End to the
+// Slides marked data-keys="board" leave ← →, Home and End to the
 // board, so moves can be stepped through. Space and Page Up/Down (what most
-// presentation clickers send) always change slides.
+// presentation clickers send) and ↑ ↓ always change slides.
 // The URL hash (#/3) tracks the current slide, so reloads and links keep your place.
 
 const slides = [...document.querySelectorAll(".slide")];
@@ -94,8 +94,10 @@ document.addEventListener("keydown", (e) => {
     case " ": to = e.shiftKey ? current - 1 : current + 1; break;
     case "PageDown": to = current + 1; break;
     case "PageUp": to = current - 1; break;
-    case "ArrowRight": case "ArrowDown": if (!board) to = current + 1; break;
-    case "ArrowLeft": case "ArrowUp": if (!board) to = current - 1; break;
+    case "ArrowDown": to = current + 1; break;
+    case "ArrowUp": to = current - 1; break;
+    case "ArrowRight": if (!board) to = current + 1; break;
+    case "ArrowLeft": if (!board) to = current - 1; break;
     case "Home": if (!board) to = 0; break;
     case "End": if (!board) to = slides.length - 1; break;
     case "f": case "F": e.preventDefault(); toggleFullscreen(); return;

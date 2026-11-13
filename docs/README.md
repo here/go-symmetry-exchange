@@ -20,12 +20,12 @@ Opening `index.html` straight from disk (`file://`) won't work, because browsers
 
 The page is a slide show: one section (`.slide`) fills the screen at a time.
 
-- **Next / previous slide:** Space / Shift+Space, Page Down / Page Up (what most presentation clickers send), or the ‹ › buttons bottom right. ⏮ (left of ‹) jumps to the first slide, the slide index. On slides without a board, the arrow keys also work.
+- **Next / previous slide:** Space / Shift+Space, Page Down / Page Up (what most presentation clickers send), ↓ / ↑ (on every slide, including boards), or the ‹ › buttons bottom right. ⏮ (left of ‹) jumps to the first slide, the slide index. On slides without a board, → / ← also work.
 - **Full screen:** F, or the ⛶ button. Esc leaves.
 - **Jump to a slide:** the address tracks the slide (`#/2`), so reloads and links keep your place. Slide ids work too: `#ogs`, `#pro`.
 - **Touch:** swipe left or right outside the board.
 - **Slide index:** the first slide lists every slide by number and name, starting with itself (1. Index). Click one to jump there; Home (on slides without a board) comes back.
-- **New slides:** add an element with class `slide` to `index.html`. Give it `data-keys="board"` if its arrow keys should drive a board instead of the slides. Give it an `id` and a `data-title`: the slide index lists it under that name, in page order.
+- **New slides:** add an element with class `slide` to `index.html`. Give it `data-keys="board"` if ← →, Home and End should drive a board instead of the slides. Give it an `id` and a `data-title`: the slide index lists it under that name, in page order.
 
 On a board slide (each board has its own game list, controls and autoplay):
 
