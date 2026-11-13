@@ -1,0 +1,13 @@
+[
+  {
+    "file": "splitting-the-board.sgf",
+    "label": "Splitting the board",
+    "black": "Beginner",
+    "white": "Beginner",
+    "result": "W+5.5",
+    "about": "A typical first game: every move answers the last one, building two walls along one border across the middle. Black takes the bottom half, White the top, and komi decides it.",
+    "rules": "japanese",
+    "scored": true,
+    "dead": []
+  }
+]

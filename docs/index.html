@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113010927">
+  <link rel="stylesheet" href="style.css?v=20261113011237">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -116,6 +116,9 @@
     <p class="hint">More: <a href="https://senseis.xmp.net/?PlayOnThePointOfSymmetry" target="_blank" rel="noopener">Play on the point of symmetry</a> · <a href="https://senseis.xmp.net/?DontPlayOnThePointOfSymmetry" target="_blank" rel="noopener">Don't play on the point of symmetry</a> · <a href="https://en.wikipedia.org/wiki/Mirror_Go" target="_blank" rel="noopener">Mirror Go</a></p>
   </section>
 
+  <!-- Splitting the board: a beginner game played along one border across the middle; scored at the end. -->
+  <main class="slide layout board-slide" id="line" data-keys="board" data-games="games/9x9/line/" data-title="Splitting the board"></main>
+
   <!-- Symmetry plays: three small positions, each opening on its symmetric move. -->
   <main class="slide layout board-slide" id="symmetry-plays" data-keys="board" data-games="games/9x9/symmetry/" data-title="Symmetry plays"></main>
 
@@ -207,6 +210,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113010927"></script>
+  <script type="module" src="app.js?v=20261113011237"></script>
 </body>
 </html>
