@@ -1,5 +1,14 @@
 [
   {
+    "file": "all-three.sgf",
+    "label": "All three on one board",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Top: Black's three-space jump on the edge, C7 and G7; White splits it in the middle at E7. Centre: Black plays E5, the centre of the board. Bottom: Black's knight's move, D3 and F2; White plays between at E3, the mirror of E2. ← steps back.",
+    "demo": true
+  },
+  {
     "file": "edge-jump-3.sgf",
     "label": "Three-space jump on the edge",
     "black": "",
