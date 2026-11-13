@@ -1,0 +1,11 @@
+[
+  {
+    "file": "edge-eyes.sgf",
+    "label": "Two eyes on the edge",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Three empty points on the top edge. Black plays the middle one, E9, and splits them into two eyes: White can't play in D9 or F9. Had White taken E9 first, Black would have only one eye. White to play; ← steps back.",
+    "demo": true
+  }
+]
