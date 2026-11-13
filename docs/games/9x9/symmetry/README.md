@@ -4,7 +4,7 @@ Shown on the "Symmetry plays" slide, after the "Symmetry" section intro. The sli
 
 | Position | Stones | Symmetric move |
 | --- | --- | --- |
-| All three on one board | Black C7, G7 (top), D3, F2 (bottom) | White E7, Black E5, White E3 |
-| Three-space jump on the edge | Black C3, G3 (third line, three empty points between) | White E3, the middle point |
-| Between a knight's move | Black C6, D4 | White D5; C5 is its mirror image |
-| The centre of the board | none | Black E5 (tengen), then Black mirrors White through E5: C7/G3, G7/C3, D3/F7 |
+| All three on one board | Black C7, C3 (left edge); White G6, H4 (right side) | Black E5, White C5, Black G5, in that order |
+| The centre of the board | none | Black E5 (tengen) |
+| Three-space jump on the edge | Black C7, C3 (third line of the left edge, three empty points between) | White C5, the middle point |
+| Between a knight's move | White G6, H4 (right side) | Black G5; H5 is its mirror image |
