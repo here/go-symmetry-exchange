@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113003017">
+  <link rel="stylesheet" href="style.css?v=20261113003128">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -99,17 +99,6 @@
     </div>
   </section>
 
-  <section class="slide image-slide" id="already-won" data-title="Play for fun">
-    <figure>
-      <img src="images/already-won.webp" width="1200" height="1200"
-           alt="Four-panel comic. Two characters sit at a board game. One asks, “So what's your primary tactical goal this turn?” The other answers, “To have fun.” “No, I mean, what are your winning conditions?” “Spending time with you.” Last panel: “Do what you must, I have already won.”">
-      <figcaption>Comic: <a href="https://foxes-in-love.tumblr.com/post/832538472462123008" target="_blank" rel="noopener">foxes and friends</a></figcaption>
-    </figure>
-    <div class="image-text">
-      <p>have fun, offer undos, try multiple paths together, ask questions, chat about other things!</p>
-    </div>
-  </section>
-
   <!-- Section intro: symmetry. -->
   <section class="slide proverb-slide" id="symmetry" data-title="Symmetry">
     <p class="kicker">Symmetry</p>
@@ -166,6 +155,17 @@
     <p class="hint">More: <a href="https://senseis.xmp.net/?topic=1111" target="_blank" rel="noopener">Sensei's Library discussion</a> · <a href="https://en.wikipedia.org/wiki/Go_proverb" target="_blank" rel="noopener">Go proverbs (Wikipedia)</a></p>
   </section>
 
+  <section class="slide image-slide" id="already-won" data-title="Play for fun">
+    <figure>
+      <img src="images/already-won.webp" width="1200" height="1200"
+           alt="Four-panel comic. Two characters sit at a board game. One asks, “So what's your primary tactical goal this turn?” The other answers, “To have fun.” “No, I mean, what are your winning conditions?” “Spending time with you.” Last panel: “Do what you must, I have already won.”">
+      <figcaption>Comic: <a href="https://foxes-in-love.tumblr.com/post/832538472462123008" target="_blank" rel="noopener">foxes and friends</a></figcaption>
+    </figure>
+    <div class="image-text">
+      <p>have fun, offer undos, try multiple paths together, ask questions, chat about other things!</p>
+    </div>
+  </section>
+
   <main class="slide layout board-slide" id="ogs" data-keys="board" data-games="games/9x9/ogs/" data-title="Beginner games"></main>
 
   <main class="slide layout board-slide" id="pro" data-keys="board" data-games="games/9x9/pro/" data-title="Pro games"></main>
@@ -174,6 +174,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113003017"></script>
+  <script type="module" src="app.js?v=20261113003128"></script>
 </body>
 </html>
