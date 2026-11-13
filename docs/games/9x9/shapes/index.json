@@ -8,5 +8,45 @@
     "about": "Clockwise from top left: ponnuki (white), bamboo, empty triangle (white), tortoise shell.",
     "scored": false,
     "dead": []
+  },
+  {
+    "file": "ponnuki.sgf",
+    "label": "Ponnuki (built up)",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Starts empty. → plays a black stone at E5, then White surrounds it from all four sides. The fourth white stone captures, leaving the ponnuki: four stones around one empty point.",
+    "demo": true,
+    "fromStart": true
+  },
+  {
+    "file": "bamboo.sgf",
+    "label": "Bamboo joint (built up)",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Starts empty. → plays two black pairs, D6–E6 and D4–E4, one line apart: the bamboo joint. White can't cut it: whichever of D5 and E5 White takes, Black takes the other.",
+    "demo": true,
+    "fromStart": true
+  },
+  {
+    "file": "empty-triangle.sgf",
+    "label": "Empty triangle (built up)",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Starts empty. → plays three white stones, D6, D5 and E5, in an L around the empty point E6: the empty triangle. The stones crowd each other, so it is a shape to avoid.",
+    "demo": true,
+    "fromStart": true
+  },
+  {
+    "file": "tortoise-shell.sgf",
+    "label": "Tortoise shell (built up)",
+    "black": "",
+    "white": "",
+    "result": "",
+    "about": "Starts empty. → plays two white stones, D5 and E5, then six black stones around them. The sixth captures both, leaving the tortoise shell: six stones around two empty points.",
+    "demo": true,
+    "fromStart": true
   }
 ]

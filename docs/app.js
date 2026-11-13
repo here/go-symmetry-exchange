@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261113004447";
-import { isActive } from "./slides.js?v=20261113004447";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261113004833";
+import { isActive } from "./slides.js?v=20261113004833";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const HERE = new URL(import.meta.url);
@@ -367,7 +367,8 @@ function createBoard(root, gamesDir, title) {
     // → at the last move (the scoring screen) goes to the next game;
     // ← at move 0 goes back to the previous game, shown at its last move.
     // Only a fresh key press, on a position that has been showing for a moment.
-    const canSwitch = divergedAt === null && gameList.length > 1 && line.length > 0 &&
+    // A menu entry with no moves (a setup position) can switch too; an empty board can't.
+    const canSwitch = divergedAt === null && gameList.length > 1 && (line.length > 0 || !!game.meta) &&
       !e.repeat && Date.now() - edgeShownAt > 400;
     if (e.key === "ArrowRight" && canSwitch && cur === line.length) {
       e.preventDefault(); setAutoplay(false); nextGame().catch(showError); return;

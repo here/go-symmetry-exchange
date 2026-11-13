@@ -1,0 +1,3 @@
+(;GM[1]FF[4]SZ[9]KM[0]GN[Empty triangle]
+C[Three white stones in an L around the empty point E6: the empty triangle. The stones crowd each other and share liberties, so it is a shape to avoid.]
+;W[dd];W[de];W[ee])
