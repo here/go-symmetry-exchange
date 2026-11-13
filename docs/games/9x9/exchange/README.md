@@ -4,13 +4,12 @@ Shown on the "Chasing one stone" slide, after the Exchange section slide. A begi
 
 | Move | Black | White |
 | --- | --- | --- |
-| 1-2 | C3 | G7 |
-| 3-4 | G3 | E4: one stone dropped into Black's lower side |
-| 5-6 | E3: chases | C7: big point |
-| 7-8 | F4: chases | C5: big point |
-| 9-10 | D4: atari | G5: ignores the atari |
-| 11-12 | E5: captures one stone | E6: blocks Black from the centre |
+| 1-2 | E5: centre point | C3: one stone dropped into the lower-left corner |
+| 3-4 | D3: chases | G7: upper-right corner |
+| 5-6 | C4: chases | C7: upper-left corner |
+| 7-8 | B3: atari | G3: lower-right corner, ignoring the atari |
+| 9 | C2: captures one stone | |
 
-Black's four moves capture one stone and leave a ponnuki in Black's own lower side, where a strong shape adds very little. White's four moves mark out the whole top half. White sacrificed a plum for peaches.
+Black's four chasing moves capture one stone and leave a ponnuki in one corner. White's four moves take the other three corners. White sacrificed a plum for peaches.
 
 `"demo": true, "fromStart": true` in `index.json`: no score card, and it opens on the empty board so the sequence can be stepped through with →.

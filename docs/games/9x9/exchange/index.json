@@ -5,7 +5,7 @@
     "black": "",
     "white": "",
     "result": "",
-    "about": "White drops one stone at E4. Black spends four moves chasing and capturing it, ending with a ponnuki deep in Black's own area. White ignores it and takes four big points (C7, C5, G5, E6). Step forward with →.",
+    "about": "White drops one stone in the lower-left corner (C3). Black spends four moves chasing and capturing it, ending with a ponnuki in that one corner. White ignores it and takes the other three corners (G7, C7, G3). Step forward with →.",
     "demo": true,
     "fromStart": true
   }
