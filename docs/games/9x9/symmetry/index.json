@@ -1,14 +1,5 @@
 [
   {
-    "file": "all-three.sgf",
-    "label": "All three on one board",
-    "black": "",
-    "white": "",
-    "result": "",
-    "about": "First Black plays E5, the centre of the board. Then White splits Black's three-space jump on the left edge (C7, C3) in the middle at C5. Then Black plays between White's knight's move on the right side (G6, H4) at G5. ← steps back.",
-    "demo": true
-  },
-  {
     "file": "centre.sgf",
     "label": "The centre of the board",
     "black": "",
