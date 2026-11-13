@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113012613">
+  <link rel="stylesheet" href="style.css?v=20261113013134">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -122,6 +122,26 @@
   <!-- Symmetry plays: three small positions, each opening on its symmetric move. -->
   <main class="slide layout board-slide" id="symmetry-plays" data-keys="board" data-games="games/9x9/symmetry/" data-title="Symmetry plays"></main>
 
+  <!-- The players of the mirror go game. Photos: Wikimedia Commons, public domain. -->
+  <section class="slide image-slide" id="players" data-title="Go Seigen and Kitani">
+    <div class="photo-pair players">
+      <figure>
+        <img src="images/go-seigen-1952.jpg" width="660" height="590" loading="lazy"
+             alt="Go Seigen in 1952, laughing, in a dark kimono, gesturing with both hands.">
+        <figcaption><strong>Go Seigen</strong> 呉清源 · 1914–2014<br>Came to Japan from China at 14. Widely seen as the greatest player of the 20th century.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/kitani-minoru-1955.jpg" width="1050" height="1400" loading="lazy"
+             alt="Minoru Kitani in 1955, in glasses and a kimono, reading a Go diagram.">
+        <figcaption><strong>Minoru Kitani</strong> 木谷実 · 1909–1975<br>“The Prodigy”, and later the teacher of a generation of top professionals.</figcaption>
+      </figure>
+    </div>
+    <div class="image-text">
+      <p>Friends and rivals: in 1933 they worked out the Shin Fuseki, a new style of opening, together.</p>
+      <p class="hint">Wikipedia: <a href="https://en.wikipedia.org/wiki/Go_Seigen" target="_blank" rel="noopener">Go Seigen</a> · <a href="https://en.wikipedia.org/wiki/Minoru_Kitani" target="_blank" rel="noopener">Minoru Kitani</a></p>
+    </div>
+  </section>
+
   <!-- Mirror go: a full 19x19 game; data-size sets the size of "Empty board". -->
   <main class="slide layout board-slide" id="mirror" data-keys="board" data-size="19" data-games="games/19x19/mirror/" data-title="Mirror go (1929)"></main>
 
@@ -209,6 +229,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113012613"></script>
+  <script type="module" src="app.js?v=20261113013134"></script>
 </body>
 </html>
