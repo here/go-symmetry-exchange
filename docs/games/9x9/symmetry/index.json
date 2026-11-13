@@ -5,8 +5,9 @@
     "black": "",
     "white": "",
     "result": "",
-    "about": "E5 is the centre of the 9x9 board, the point of symmetry for the whole board. Black plays there. ← shows the empty board.",
-    "demo": true
+    "about": "E5 is the centre of the 9x9 board, the point of symmetry for the whole board. → plays Black there, and → again goes on to the three-space jump.",
+    "demo": true,
+    "fromStart": true
   },
   {
     "file": "edge-jump-3.sgf",
@@ -14,8 +15,9 @@
     "black": "",
     "white": "",
     "result": "",
-    "about": "Black's two stones on the third line of the left edge, C7 and C3, have three empty points between them. The middle one, C5, is the point of symmetry: White splits them there. ← shows the position before.",
-    "demo": true
+    "about": "Black's two stones on the third line of the left edge, C7 and C3, have three empty points between them. The middle one, C5, is the point of symmetry. → plays White there, and → again goes on to the knight's move.",
+    "demo": true,
+    "fromStart": true
   },
   {
     "file": "knights-move.sgf",
@@ -23,7 +25,8 @@
     "black": "",
     "white": "",
     "result": "",
-    "about": "White's knight's move on the right side, G6 and H4. The two points between them, G5 and H5, are mirror images around its centre. Black plays between at G5. ← shows the position before.",
-    "demo": true
+    "about": "White's knight's move on the right side, G6 and H4. The two points between them, G5 and H5, are mirror images around its centre. → plays Black between at G5. ← steps back.",
+    "demo": true,
+    "fromStart": true
   }
 ]

@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261113003646";
-import { isActive } from "./slides.js?v=20261113003646";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261113003923";
+import { isActive } from "./slides.js?v=20261113003923";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const HERE = new URL(import.meta.url);
@@ -452,11 +452,12 @@ function createBoard(root, gamesDir, title) {
     if (meta) {
       g.meta = meta;
       // A demo position (`demo: true`) has no score card and opens on its last move,
-      // so ← steps back through how it was built.
+      // so ← steps back through how it was built. With `fromStart: true` it opens on
+      // move 0 instead, so → plays its moves and then moves on to the next game.
       if (!meta.demo) g.ending = { rules: meta.rules, scored: !!meta.scored, dead: (meta.dead || []).map((p) => sgfPoint(p, g.size)) };
     }
     loadGame(g);
-    if (meta?.demo) goTo(line.length);
+    if (meta?.demo && !meta.fromStart) goTo(line.length);
   }
 
   function showError(err) {

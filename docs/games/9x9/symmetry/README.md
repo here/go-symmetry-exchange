@@ -1,6 +1,6 @@
 # Symmetry plays
 
-Shown on the "Symmetry plays" slide, after the "Symmetry" section intro. Three small positions, in order: the centre, the three-space jump, the knight's move. Each position ends on the symmetric move (marked as the last move), so ← shows the position before it. `"demo": true` in `index.json` opens each on its last move with no score card.
+Shown on the "Symmetry plays" slide, after the "Symmetry" section intro. Three small positions, in order: the centre, the three-space jump, the knight's move. Each opens on its starting position (`"demo": true, "fromStart": true`: no score card, open at move 0), so → steps through the whole slide: empty board, E5, the jump's black stones, White's C5, the knight's move's white stones, Black's G5. At the end of a position, → opens the next one; at move 0, ← goes back to the previous one.
 
 | Position | Stones | Symmetric move |
 | --- | --- | --- |
