@@ -35,7 +35,7 @@
     "black": "",
     "white": "",
     "result": "",
-    "about": "Starts empty. → plays three white stones, D6, D5 and E5, in an L around the empty point E6: the empty triangle. The stones crowd each other, so it is a shape to avoid.",
+    "about": "Starts empty. → plays three white stones, D6, D5 and E5, in an L around the empty point E6: the empty triangle. Then four black stones at C6, C5, D4 and E4 cut its liberties from 7 to 3 (D7, E6, F5): the stones crowd each other, so the shape is weak.",
     "demo": true,
     "fromStart": true
   },

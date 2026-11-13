@@ -17,5 +17,5 @@ After the overview, four more boards build each shape on its own in the centre o
 | --- | --- | --- |
 | `ponnuki.sgf` | Ponnuki (White) | Black E5; White E6, D5, F5, E4, capturing E5 |
 | `bamboo.sgf` | Bamboo joint (Black) | Black D6, E6, D4, E4 |
-| `empty-triangle.sgf` | Empty triangle (White) | White D6, D5, E5, around the empty E6 |
+| `empty-triangle.sgf` | Empty triangle (White) | White D6, D5, E5, around the empty E6; then Black C6, C5, D4, E4, leaving White 3 liberties (D7, E6, F5) instead of 7 |
 | `tortoise-shell.sgf` | Tortoise shell (Black) | White D5, E5; Black D6, E6, F5, E4, D4, C5, capturing D5 and E5 |
