@@ -9,7 +9,7 @@
   <script>
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
   </script>
-  <link rel="stylesheet" href="style.css?v=20261113001612">
+  <link rel="stylesheet" href="style.css?v=20261113002958">
 </head>
 <body>
   <!-- Each .slide is one screen of the talk. Its data-title is its name in the slide index below
@@ -86,6 +86,19 @@
     <p class="hint">Placeholder: each entry will link to its section's slides.</p>
   </section>
 
+  <section class="slide image-slide" id="c-base" data-title="How I got here">
+    <div class="photo-pair">
+      <img src="images/c-base-board.jpg" width="2000" height="1500" loading="lazy"
+           alt="A 19x19 Go board seen from above: a full row of black stones across the middle, with small groups of black and white stones above and below it.">
+      <img src="images/c-base-mike.jpg" width="2000" height="1500" loading="lazy"
+           alt="Mike at a desk in the 2000s, next to a Go board covered in stones, a mug and a trackball.">
+    </div>
+    <div class="image-text">
+      <p>mike learned go at c-base in berlin in the 00s</p>
+      <p>follow along today at <a href="https://herebox.org/go" target="_blank" rel="noopener">herebox.org/go</a></p>
+    </div>
+  </section>
+
   <section class="slide image-slide" id="already-won" data-title="Play for fun">
     <figure>
       <img src="images/already-won.webp" width="1200" height="1200"
@@ -158,6 +171,6 @@
   <main class="slide layout board-slide" id="demo" data-keys="board" data-games="games/9x9/blank/" data-title="Demo board"></main>
 
   <!-- app.js imports slides.js and go.js. Keep every ?v= the same; tools/bump-version.sh updates them. -->
-  <script type="module" src="app.js?v=20261113001612"></script>
+  <script type="module" src="app.js?v=20261113002958"></script>
 </body>
 </html>
