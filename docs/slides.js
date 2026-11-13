@@ -31,7 +31,7 @@ for (const list of document.querySelectorAll('[data-role="slide-index"]')) {
   });
 }
 
-// Controls: prev · counter · next · full screen, plus a progress bar.
+// Controls: first (the slide index) · prev · counter · next · full screen, plus a progress bar.
 const bar = document.createElement("div");
 bar.className = "deck-progress";
 bar.innerHTML = "<span></span>";
@@ -39,6 +39,7 @@ const nav = document.createElement("nav");
 nav.className = "deck-nav";
 nav.setAttribute("aria-label", "Slides");
 nav.innerHTML = `
+  <button data-act="first" title="Slide index (Home)" aria-label="First slide: slide index">⏮</button>
   <button data-act="prev" title="Previous slide (Page Up)" aria-label="Previous slide">‹</button>
   <span class="deck-count" aria-live="polite"></span>
   <button data-act="next" title="Next slide (Page Down / Space)" aria-label="Next slide">›</button>
@@ -47,6 +48,7 @@ document.body.append(bar, nav);
 
 nav.addEventListener("click", (e) => {
   const act = e.target.closest("button")?.dataset.act;
+  if (act === "first") go(0);
   if (act === "prev") go(current - 1);
   if (act === "next") go(current + 1);
   if (act === "fs") toggleFullscreen();
@@ -63,6 +65,7 @@ function show(i) {
   current = Math.max(0, Math.min(slides.length - 1, i));
   slides.forEach((s, j) => s.classList.toggle("active", j === current));
   nav.querySelector(".deck-count").textContent = `${current + 1} / ${slides.length}`;
+  nav.querySelector('[data-act="first"]').disabled = current === 0;
   nav.querySelector('[data-act="prev"]').disabled = current === 0;
   nav.querySelector('[data-act="next"]').disabled = current === slides.length - 1;
   bar.firstElementChild.style.width = `${((current + 1) / slides.length) * 100}%`;

@@ -1,5 +1,5 @@
-import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261113001511";
-import { isActive } from "./slides.js?v=20261113001511";
+import { BLACK, WHITE, EMPTY, other, emptyState, play, parseSGF, score, sgfPoint } from "./go.js?v=20261113001612";
+import { isActive } from "./slides.js?v=20261113001612";
 
 // Cache-busting version from this script's own URL (app.js?v=...), reused for data fetches.
 const HERE = new URL(import.meta.url);

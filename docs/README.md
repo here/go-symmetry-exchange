@@ -20,7 +20,7 @@ Opening `index.html` straight from disk (`file://`) won't work, because browsers
 
 The page is a slide show: one section (`.slide`) fills the screen at a time.
 
-- **Next / previous slide:** Space / Shift+Space, Page Down / Page Up (what most presentation clickers send), or the ‹ › buttons bottom right. On slides without a board, the arrow keys also work.
+- **Next / previous slide:** Space / Shift+Space, Page Down / Page Up (what most presentation clickers send), or the ‹ › buttons bottom right. ⏮ (left of ‹) jumps to the first slide, the slide index. On slides without a board, the arrow keys also work.
 - **Full screen:** F, or the ⛶ button. Esc leaves.
 - **Jump to a slide:** the address tracks the slide (`#/2`), so reloads and links keep your place. Slide ids work too: `#ogs`, `#pro`.
 - **Touch:** swipe left or right outside the board.
