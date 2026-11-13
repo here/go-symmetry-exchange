@@ -89,6 +89,7 @@ body {
 .slide-index { margin: 0; padding: 0 0 0 2.5em; columns: 2 280px; column-gap: 48px; }
 .slide-index li { break-inside: avoid; padding: 8px 0; font-size: 1.2rem; }
 .slide-index li::marker { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+.index-help { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--muted); font-size: 1rem; }
 
 .toc-slide h2 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 24px; }
 
